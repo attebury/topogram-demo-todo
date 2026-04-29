@@ -38,6 +38,10 @@ jobs:
         run: npm run catalog:check
       - name: Check catalog template visibility
         run: npm run catalog:template-list
+      - name: Check catalog template provenance
+        run: npm run catalog:provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check Topogram
         run: npm run check
       - name: Check template policy
