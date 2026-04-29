@@ -1,0 +1,402 @@
+{
+  "files": [
+    {
+      "path": "implementation/backend/reference.js",
+      "sha256": "fdc2a8c808da34fc61dc752056d4d335cfda8f5272ab5bef44228521432d2ccf",
+      "size": 6077
+    },
+    {
+      "path": "implementation/backend/repository-reference.js",
+      "sha256": "25998b14ffa505c9943f23c4be0e4483d82f3c11e8c26d9da1b9da7c78b2607e",
+      "size": 2564
+    },
+    {
+      "path": "implementation/backend/repository-renderers.js",
+      "sha256": "fd975223dc6194cff3a0faf3a800ddd481da676a66677d8e0f1244f6a5c5619a",
+      "size": 24064
+    },
+    {
+      "path": "implementation/index.js",
+      "sha256": "7819bbe7cb68d143f9cb37be70c5b0bb163f702bc9b21ba42b7d12ba4a9dd487",
+      "size": 1806
+    },
+    {
+      "path": "implementation/README.md",
+      "sha256": "ec261d0bcb9f355c91abe12a80320529139dfea3474b17f0c554231f218aad06",
+      "size": 223
+    },
+    {
+      "path": "implementation/runtime/check-renderers.js",
+      "sha256": "70ad1c8444c1a5c4ac033d74bf7236cec894acbe3497bb9ff4def3dab2b11f26",
+      "size": 12956
+    },
+    {
+      "path": "implementation/runtime/checks.js",
+      "sha256": "cfd4b1e805c4546282fd2ea3c19c004f1306257991bcf1f2cdb46b9b0b116b01",
+      "size": 5367
+    },
+    {
+      "path": "implementation/runtime/reference.js",
+      "sha256": "d7a4a6b94e5efaf783f68eaa6715ddb6550898280764d4e423fbce278d29e34c",
+      "size": 3136
+    },
+    {
+      "path": "implementation/web/reference.js",
+      "sha256": "dc634a8c042d5026975ef1f67ee7cd0e66afa207d3c76b29ca57e5d3942cedb0",
+      "size": 1739
+    },
+    {
+      "path": "implementation/web/renderers.js",
+      "sha256": "ddbee18922d0a57f0b69eb433a6df909958c5eae923530efe248ef1a6867588c",
+      "size": 44627
+    },
+    {
+      "path": "implementation/web/screens-reference.js",
+      "sha256": "10caf15e17253fde20b551cf02e87914d2e9b8c8bd24df755a40cc2240d9d964",
+      "size": 508
+    },
+    {
+      "path": "topogram.project.json",
+      "sha256": "d2c19d547dcef8c2daea624b34810b5595f869f71f6514888350494907794bf3",
+      "size": 1345
+    },
+    {
+      "path": "topogram/actors/actor-user.tg",
+      "sha256": "2c47a931c65659d2ac90f7cbb3f06cf116aa50a160303f7cfa9d16a6dc844b1a",
+      "size": 118
+    },
+    {
+      "path": "topogram/capabilities/cap-complete-task.tg",
+      "sha256": "d4ad83f791fd229ad8023ee71507cf02c2f97f54b1168753141329efdee4edf0",
+      "size": 268
+    },
+    {
+      "path": "topogram/capabilities/cap-create-project.tg",
+      "sha256": "19f3fa14ba3b9c543ae8e576c7825277f2c3c00122f8412042cec3110c62afee",
+      "size": 255
+    },
+    {
+      "path": "topogram/capabilities/cap-create-task.tg",
+      "sha256": "0e254d14fb6e2dfcc6fdd78813cac86da1d90a5445047030b286ab4af74bfe59",
+      "size": 277
+    },
+    {
+      "path": "topogram/capabilities/cap-create-user.tg",
+      "sha256": "72524acefbcc83fdd55eedc3b376f00d2cde9aa7ee97cacd5aa42459e3e4bb55",
+      "size": 237
+    },
+    {
+      "path": "topogram/capabilities/cap-delete-task.tg",
+      "sha256": "f8c72bc6b6b920fd1afb703c804abe2da9a6ec5f25b2bafe8211205d6ab26733",
+      "size": 284
+    },
+    {
+      "path": "topogram/capabilities/cap-download-task-export.tg",
+      "sha256": "a47df9831424248b29e567e5572d5caf0b4000166f30554ea1856f80e6c89c1b",
+      "size": 235
+    },
+    {
+      "path": "topogram/capabilities/cap-export-tasks.tg",
+      "sha256": "2a0b81cfd0f5716da44732aba4274feeaa17d8160614f1bd55e614c684401f56",
+      "size": 280
+    },
+    {
+      "path": "topogram/capabilities/cap-get-project.tg",
+      "sha256": "caa0c3636bf017d001f6e6c44af292574a075304717bab4e1e85287b9b6c1a76",
+      "size": 252
+    },
+    {
+      "path": "topogram/capabilities/cap-get-task-export-job.tg",
+      "sha256": "9cec26b3908f3112d878d90b0b2336d5cacd42c0ea15abddf7930ea2e94914a4",
+      "size": 279
+    },
+    {
+      "path": "topogram/capabilities/cap-get-task.tg",
+      "sha256": "b8d7993d5e108f873a134a1b893cdfc374630cb57245e43faa003199dd9bd020",
+      "size": 234
+    },
+    {
+      "path": "topogram/capabilities/cap-get-user.tg",
+      "sha256": "eb29fe8b9247f5ac8628c171298fe9bb3476c27e07db712e361adf87b40978e7",
+      "size": 234
+    },
+    {
+      "path": "topogram/capabilities/cap-list-projects.tg",
+      "sha256": "f7de77ee26c54708deaaeef38df37b7db392faacb942c8ee4a7379342ceb2000",
+      "size": 243
+    },
+    {
+      "path": "topogram/capabilities/cap-list-tasks.tg",
+      "sha256": "3b0c2aa864ee61e408c517b9fc1c97fdc81a07e19388a6e292c5b328cd496e47",
+      "size": 254
+    },
+    {
+      "path": "topogram/capabilities/cap-list-users.tg",
+      "sha256": "8800b8744bb25df69f7948a6d1a3b2c5add6201331b0a755093d017e278ca849",
+      "size": 225
+    },
+    {
+      "path": "topogram/capabilities/cap-update-project.tg",
+      "sha256": "7e65c08bd538f5585e41b982acfb1c2ad93e20ac0a14c3579aec31ef0c7f62fc",
+      "size": 289
+    },
+    {
+      "path": "topogram/capabilities/cap-update-task.tg",
+      "sha256": "71bbfbc4478f687c566625e15ffaa75db96cc53b2c8c47d4bfec86d0e534f4ca",
+      "size": 268
+    },
+    {
+      "path": "topogram/capabilities/cap-update-user.tg",
+      "sha256": "cfb95d0ce73c6e7dfa1517eb20ccad5d9be26f011188baf397513fcbbf03458a",
+      "size": 268
+    },
+    {
+      "path": "topogram/decisions/decision-task-ownership.tg",
+      "sha256": "0fbd07c36ecd6b7b6fdb180f453cdb60c42e27aaf54f473ad0e6653582402586",
+      "size": 274
+    },
+    {
+      "path": "topogram/docs/glossary/user.md",
+      "sha256": "e15747acca1b6cf278c0589ded1faa59959eea46627312a41cdadcd247c2568e",
+      "size": 680
+    },
+    {
+      "path": "topogram/docs/journeys/task-creation-and-ownership.md",
+      "sha256": "da79dc023a36506a4fb90fe153339eb4833c31462674fff497d685b364479617",
+      "size": 2218
+    },
+    {
+      "path": "topogram/entities/entity-project.tg",
+      "sha256": "b896eb21c40d9b97750fdcc907fee8973e2a89b15cfa5d10ebdcf7217f192e8d",
+      "size": 460
+    },
+    {
+      "path": "topogram/entities/entity-task.tg",
+      "sha256": "4b11ef3e6b4e4555e98092cf627970579e82d89cc0e6fde3c042cbf5a59236cd",
+      "size": 870
+    },
+    {
+      "path": "topogram/entities/entity-user.tg",
+      "sha256": "cc122c2bf9bf32dc4fd7c378251e15426d6f11a39e4d962613b51d910367c353",
+      "size": 397
+    },
+    {
+      "path": "topogram/enums/enum-export-job-status.tg",
+      "sha256": "96a88340e370f0cc2d52ba3b145af487a8c40b74c7cf85afd6d72d7fb6c0b213",
+      "size": 84
+    },
+    {
+      "path": "topogram/enums/enum-project-status.tg",
+      "sha256": "db932430837fcb85abb3794335048146f4ff68b9dabcc3666813ae1968ce60b4",
+      "size": 52
+    },
+    {
+      "path": "topogram/enums/enum-task-priority.tg",
+      "sha256": "fcab80d7e5955019e7ff26403ab177e80e9faa2faca891da8449ccffe0b07d05",
+      "size": 52
+    },
+    {
+      "path": "topogram/enums/enum-task-status.tg",
+      "sha256": "c8ab3c0667fda240ca2bae67b0ab35af64e5109e14d54054d5181113369a261b",
+      "size": 67
+    },
+    {
+      "path": "topogram/operations/operation-task-creation-monitoring.tg",
+      "sha256": "31fbefccf0d51d34c4356755bb9e03711d017764d16cd8927bd395fb9d01d30b",
+      "size": 281
+    },
+    {
+      "path": "topogram/projections/proj-api.tg",
+      "sha256": "60ac00d14fdc76f97bc274a3c4f1b50b5dcf4715307444e809ae76199e78ece0",
+      "size": 8404
+    },
+    {
+      "path": "topogram/projections/proj-db-postgres.tg",
+      "sha256": "1b07a34b1bb5610681622fb0584775bc8eb3fd1b6a72bbe959de4a97c5005a6b",
+      "size": 1473
+    },
+    {
+      "path": "topogram/projections/proj-db-sqlite.tg",
+      "sha256": "138a829e19df00ee213136792f59284bbf327066a617ae49b636345ac2910b51",
+      "size": 1186
+    },
+    {
+      "path": "topogram/projections/proj-ui-shared.tg",
+      "sha256": "b85ba6ace56c970fa05df484fc6c870e011b7dca67d3f187f8acebe416b933ea",
+      "size": 8050
+    },
+    {
+      "path": "topogram/projections/proj-ui-web-react.tg",
+      "sha256": "e13d09349a4dc2df20093df3610c95e5ae04bcf5f331b81bac912f721f238145",
+      "size": 2902
+    },
+    {
+      "path": "topogram/projections/proj-ui-web.tg",
+      "sha256": "9da6ee31e9e2d4c3da62fa3cc651399090f9927f496587e14198633b1201c622",
+      "size": 2896
+    },
+    {
+      "path": "topogram/rules/rule-no-task-creation-in-archived-project.tg",
+      "sha256": "e78ca85ccb472c0293c7482e011d0d08b7d9ac9a11fc3aad0331e7488b22b3c3",
+      "size": 276
+    },
+    {
+      "path": "topogram/rules/rule-only-active-users-may-own-tasks.tg",
+      "sha256": "770d7bc4256536f0c8265fe02dd8995a03103ba5fd14ff76771e5d7d274eae6f",
+      "size": 262
+    },
+    {
+      "path": "topogram/shapes/shape-input-complete-task.tg",
+      "sha256": "37f1728e99b0cecdd7f36392ee91d5c5727f77b4f322a44af5b14baf5eadc2a8",
+      "size": 209
+    },
+    {
+      "path": "topogram/shapes/shape-input-create-project.tg",
+      "sha256": "34bfe993d138dd6ba161a162665c639ca1fa499855b1b944a3d2aecee1649eb6",
+      "size": 207
+    },
+    {
+      "path": "topogram/shapes/shape-input-create-task.tg",
+      "sha256": "cd3ccb5f2e8bf3235203586c6e21a848b6b045a66f08ac75338c7a0e20e3092f",
+      "size": 218
+    },
+    {
+      "path": "topogram/shapes/shape-input-create-user.tg",
+      "sha256": "57333261c53c054026a5f5ff8166083d1eecc3e1ff3a674d6f3242062406af0c",
+      "size": 190
+    },
+    {
+      "path": "topogram/shapes/shape-input-delete-task.tg",
+      "sha256": "32ab20f4985bc4b2c84b2ed9934f775fa980d0618fd3bd03f19ac3e8c2a254e4",
+      "size": 162
+    },
+    {
+      "path": "topogram/shapes/shape-input-export-tasks.tg",
+      "sha256": "909333a5a629b3fc1fbe10c2e0b9865fb1e66a09204c810bec94fffc4a033e5d",
+      "size": 278
+    },
+    {
+      "path": "topogram/shapes/shape-input-get-project.tg",
+      "sha256": "f6394cf915a7bb1bccbbdc8f9a9fbc20ba09eff048751529679a451026c9ed7a",
+      "size": 175
+    },
+    {
+      "path": "topogram/shapes/shape-input-get-task-export-job.tg",
+      "sha256": "8b45343871d96d90a7aa19e2923d5192f267b750f56b923ca8ce80bf0b12c3f2",
+      "size": 193
+    },
+    {
+      "path": "topogram/shapes/shape-input-get-task.tg",
+      "sha256": "7e5bc7e3de3e8786b524406be46197d06c87bddacab5a629eff79d6f3109e046",
+      "size": 163
+    },
+    {
+      "path": "topogram/shapes/shape-input-get-user.tg",
+      "sha256": "c13dd8e515034961ffcf5e3658533cb6f5a556672e69f5e71091a8417a024bac",
+      "size": 163
+    },
+    {
+      "path": "topogram/shapes/shape-input-list-projects.tg",
+      "sha256": "148e5b45de7e5c8bb9f03cd79b500055f65d6265ec5ba0cee2b784b203d00319",
+      "size": 203
+    },
+    {
+      "path": "topogram/shapes/shape-input-list-tasks.tg",
+      "sha256": "d038a0ec4074539ea5aa58c20632901efcadf71a5179c78ed7703bb205aa72cb",
+      "size": 282
+    },
+    {
+      "path": "topogram/shapes/shape-input-list-users.tg",
+      "sha256": "c014a3c0627e1adfbbee94686e1bbebc28058528121c0faea062dc75c929f2fc",
+      "size": 194
+    },
+    {
+      "path": "topogram/shapes/shape-input-update-project.tg",
+      "sha256": "c77c5a14502a52296fb10ffa4be587844a9e7efa7c755f5bb2599b41f033b4c4",
+      "size": 291
+    },
+    {
+      "path": "topogram/shapes/shape-input-update-task.tg",
+      "sha256": "b8e89c1121cec96827fcaebf552a5685855bf80ae099c1828e0cc23caebd5115",
+      "size": 342
+    },
+    {
+      "path": "topogram/shapes/shape-input-update-user.tg",
+      "sha256": "f41443bd2dcff3d0bb0fb0fbc49ce85ca42dec704be77e17c2cc481c60ffaeb9",
+      "size": 252
+    },
+    {
+      "path": "topogram/shapes/shape-output-project-card.tg",
+      "sha256": "c92594ce59a4af7f79d42ff289565477471779be8e9ac25fcc65dd83a8b4eeb0",
+      "size": 213
+    },
+    {
+      "path": "topogram/shapes/shape-output-project-detail.tg",
+      "sha256": "fa887abebf314744156cbbd6407d7d9dea102a4e25d4d730be28add0ab9220cc",
+      "size": 210
+    },
+    {
+      "path": "topogram/shapes/shape-output-task-card.tg",
+      "sha256": "6abdd3a676862a48b3054b075b6b1e388ceeb83812542a300b5c3db1a7d51528",
+      "size": 371
+    },
+    {
+      "path": "topogram/shapes/shape-output-task-detail.tg",
+      "sha256": "f10a77a6e61795e0da4488ee01261c7f4375d2a2ab7aae17ccac4f8d086a0aa7",
+      "size": 255
+    },
+    {
+      "path": "topogram/shapes/shape-output-task-export-callback.tg",
+      "sha256": "24b80ba639c0d57d087a4b6c22cdfc9e43c3d5e7ec410c7de2a001917ca9b1f3",
+      "size": 343
+    },
+    {
+      "path": "topogram/shapes/shape-output-task-export-job.tg",
+      "sha256": "99e0134433130c49e949cc1fda94304a5571b868511b8edcec7c6274a524e18d",
+      "size": 297
+    },
+    {
+      "path": "topogram/shapes/shape-output-task-export-status.tg",
+      "sha256": "76d34213466455b42dcf56bae2b9b4c1da050eca6acf02a338ff1c6411638168",
+      "size": 443
+    },
+    {
+      "path": "topogram/shapes/shape-output-user-card.tg",
+      "sha256": "485791761d7948113d93e16427cdd07bfe85e7b562602ea2cd42e08891882e48",
+      "size": 196
+    },
+    {
+      "path": "topogram/shapes/shape-output-user-detail.tg",
+      "sha256": "f7c6a49fa7f178c801fcc40ceef95db037136d3730fca7b45644d4e630558fbf",
+      "size": 193
+    },
+    {
+      "path": "topogram/terms/term-user.tg",
+      "sha256": "c9e72d2db1140ce60536058afb575121cc7ca470fd1ac42de3fea75750bde6dc",
+      "size": 108
+    },
+    {
+      "path": "topogram/verifications/verification-create-task-policy.tg",
+      "sha256": "328f6ad65634e5bc9702e6927692911b24696851269fa3ceddcd0d117d471a0b",
+      "size": 401
+    },
+    {
+      "path": "topogram/verifications/verification-runtime-smoke.tg",
+      "sha256": "1e34f0125b69bbf85e3342ba8ea2e62b23cefa63d8f92a5d18edbb2bc4b26df4",
+      "size": 356
+    },
+    {
+      "path": "topogram/verifications/verification-task-runtime-flow.tg",
+      "sha256": "fc600437a81d464f2a37c97b1c150586a596b446eb458df3b1c8bfe4f7e709b1",
+      "size": 659
+    }
+  ],
+  "template": {
+    "id": "@attebury/topogram-template-todo",
+    "requested": "@attebury/topogram-template-todo@0.1.1",
+    "source": "package",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.1",
+    "version": "0.1.1"
+  },
+  "version": "0.1"
+}

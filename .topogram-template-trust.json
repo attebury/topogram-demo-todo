@@ -1,7 +1,7 @@
 {
   "version": "1",
   "trustPolicy": "topogram-template-executable-implementation-v1",
-  "trustedAt": "2026-04-29T12:53:51.353Z",
+  "trustedAt": "2026-04-29T14:58:55.239Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
     "version": "0.1.1",
