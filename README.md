@@ -9,6 +9,7 @@ npm install
 npm run explain
 npm run check
 npm run template:policy:check
+npm run template:update:recommend
 npm run generate
 npm run verify
 ```
