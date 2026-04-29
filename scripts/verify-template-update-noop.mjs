@@ -31,6 +31,13 @@ if (plan.writes !== false) {
 }
 assertClean(plan, "Template update plan");
 
+const check = run(["template", "update", "--check", "--json"]);
+if (check.writes !== false) {
+  console.error("Template update check should not write files.");
+  process.exit(1);
+}
+assertClean(check, "Template update check");
+
 const apply = run(["template", "update", "--apply", "--json"]);
 if (apply.writes !== false || (apply.applied || []).length !== 0) {
   console.error("No-op template update apply should not write files.");
