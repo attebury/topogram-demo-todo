@@ -31,6 +31,13 @@ if (plan.writes !== false) {
 }
 assertClean(plan, "Template update plan");
 
+const status = run(["template", "update", "--status", "--json"]);
+if (status.writes !== false) {
+  console.error("Template update status should not write files.");
+  process.exit(1);
+}
+assertClean(status, "Template update status");
+
 const check = run(["template", "update", "--check", "--json"]);
 if (check.writes !== false) {
   console.error("Template update check should not write files.");

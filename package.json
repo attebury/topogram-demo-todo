@@ -16,6 +16,7 @@
     "app:smoke": "npm --prefix ./app run smoke",
     "app:runtime-check": "npm --prefix ./app run runtime-check",
     "app:check": "npm run app:compile && npm run app:smoke && npm run app:runtime-check",
+    "template:update:status": "topogram template update --status",
     "template:update:plan": "topogram template update --plan",
     "template:update:check": "topogram template update --check",
     "template:update:apply": "topogram template update --apply",
@@ -23,6 +24,6 @@
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.15"
+    "@attebury/topogram": "^0.2.16"
   }
 }
