@@ -24,6 +24,6 @@
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.16"
+    "@attebury/topogram": "^0.2.17"
   }
 }

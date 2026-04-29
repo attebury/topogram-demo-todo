@@ -41,8 +41,8 @@ function writeCandidateTemplate() {
   );
 }
 
-function runApply() {
-  return childProcess.spawnSync("topogram", ["template", "update", "--apply", "--template", candidateRoot, "--json"], {
+function runTopogram(args) {
+  return childProcess.spawnSync("topogram", args, {
     cwd: projectRoot,
     encoding: "utf8",
     env: { ...process.env, PATH: process.env.PATH || "" }
@@ -55,7 +55,7 @@ try {
   fs.appendFileSync(path.join(projectRoot, conflictFile), "\n# local conflict proof edit\n", "utf8");
   fs.appendFileSync(path.join(candidateRoot, conflictFile), "\n# candidate conflict proof edit\n", "utf8");
 
-  const result = runApply();
+  const result = runTopogram(["template", "update", "--apply", "--template", candidateRoot, "--json"]);
   if (result.status === 0) {
     console.error("Template update apply unexpectedly succeeded.");
     console.error(result.stdout || result.stderr);
@@ -75,7 +75,29 @@ try {
     console.error("Template update apply changed the locally edited file.");
     process.exit(1);
   }
-  console.log("Template update conflict guard passed.");
+
+  const acceptCurrent = runTopogram(["template", "update", "--accept-current", conflictFile, "--json"]);
+  if (acceptCurrent.status !== 0) {
+    console.error("Template update accept-current unexpectedly failed.");
+    console.error(acceptCurrent.stdout || acceptCurrent.stderr);
+    process.exit(1);
+  }
+  const acceptPayload = JSON.parse(acceptCurrent.stdout);
+  if (!(acceptPayload.accepted || []).some((file) => file.path === conflictFile)) {
+    console.error("Template update accept-current did not report the accepted file.");
+    console.error(JSON.stringify(acceptPayload, null, 2));
+    process.exit(1);
+  }
+
+  const status = runTopogram(["template", "update", "--status", "--template", candidateRoot, "--json"]);
+  const statusPayload = JSON.parse(status.stdout);
+  const stillConflicts = (statusPayload.conflicts || []).some((conflict) => conflict.path === conflictFile);
+  if (stillConflicts) {
+    console.error("Template update status still reports a conflict after accept-current.");
+    console.error(JSON.stringify(statusPayload, null, 2));
+    process.exit(1);
+  }
+  console.log("Template update conflict and accept-current guard passed.");
 } finally {
   fs.rmSync(tempRoot, { recursive: true, force: true });
 }
