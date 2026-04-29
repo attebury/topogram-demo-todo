@@ -1,0 +1,15 @@
+{
+  "allowedPackageScopes": [
+    "@attebury"
+  ],
+  "allowedSources": [
+    "package",
+    "local"
+  ],
+  "allowedTemplateIds": [
+    "@attebury/topogram-template-todo"
+  ],
+  "executableImplementation": "allow",
+  "pinnedVersions": {},
+  "version": "0.1"
+}
