@@ -1,0 +1,16 @@
+{
+  "version": "1",
+  "trustPolicy": "topogram-template-executable-implementation-v1",
+  "trustedAt": "2026-04-29T12:00:32.673Z",
+  "template": {
+    "id": "@attebury/topogram-template-todo",
+    "version": "0.1.1",
+    "source": "package",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.1"
+  },
+  "implementation": {
+    "id": "web-api-db-template",
+    "module": "./implementation/index.js",
+    "export": "WEB_API_DB_IMPLEMENTATION"
+  }
+}

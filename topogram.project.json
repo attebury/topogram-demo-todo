@@ -5,6 +5,13 @@
     "module": "./implementation/index.js",
     "export": "WEB_API_DB_IMPLEMENTATION"
   },
+  "template": {
+    "id": "@attebury/topogram-template-todo",
+    "version": "0.1.1",
+    "source": "package",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.1",
+    "includesExecutableImplementation": true
+  },
   "outputs": {
     "app": {
       "path": "./app",
