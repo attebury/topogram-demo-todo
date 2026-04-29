@@ -20,12 +20,13 @@
     "template:update:plan": "topogram template update --plan",
     "template:update:check": "topogram template update --check",
     "template:update:apply": "topogram template update --apply",
+    "template:status:latest": "topogram template status --latest",
     "template:policy:check": "topogram template policy check",
     "template:update:guard": "node ./scripts/verify-template-update-noop.mjs",
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs",
     "template:update:recommend": "topogram template update --recommend"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.19"
+    "@attebury/topogram": "^0.2.20"
   }
 }
