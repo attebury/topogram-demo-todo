@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "entries": [
+    {
+      "id": "todo",
+      "kind": "template",
+      "package": "@attebury/topogram-template-todo",
+      "defaultVersion": "0.1.2",
+      "description": "Todo app starter for the external Topogram demo.",
+      "tags": [
+        "todo",
+        "demo",
+        "sveltekit",
+        "hono",
+        "postgres"
+      ],
+      "trust": {
+        "scope": "@attebury",
+        "includesExecutableImplementation": true,
+        "notes": "CI fixture for verifying catalog template visibility."
+      }
+    }
+  ]
+}

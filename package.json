@@ -24,9 +24,11 @@
     "template:policy:check": "topogram template policy check",
     "template:update:guard": "node ./scripts/verify-template-update-noop.mjs",
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs",
-    "template:update:recommend": "topogram template update --recommend"
+    "template:update:recommend": "topogram template update --recommend",
+    "catalog:check": "topogram catalog check ./topograms.catalog.json",
+    "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.20"
+    "@attebury/topogram": "^0.2.21"
   }
 }
