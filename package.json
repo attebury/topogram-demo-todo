@@ -15,9 +15,12 @@
     "app:compile": "npm --prefix ./app run compile",
     "app:smoke": "npm --prefix ./app run smoke",
     "app:runtime-check": "npm --prefix ./app run runtime-check",
-    "app:check": "npm run app:compile && npm run app:smoke && npm run app:runtime-check"
+    "app:check": "npm run app:compile && npm run app:smoke && npm run app:runtime-check",
+    "template:update:plan": "topogram template update --plan",
+    "template:update:apply": "topogram template update --apply",
+    "template:update:guard": "node ./scripts/verify-template-update-noop.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.13"
+    "@attebury/topogram": "^0.2.14"
   }
 }

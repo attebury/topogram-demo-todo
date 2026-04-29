@@ -1,59 +1,59 @@
 {
-  "version": "0.1",
   "implementation": {
+    "export": "WEB_API_DB_IMPLEMENTATION",
     "id": "web-api-db-template",
-    "module": "./implementation/index.js",
-    "export": "WEB_API_DB_IMPLEMENTATION"
-  },
-  "template": {
-    "id": "@attebury/topogram-template-todo",
-    "version": "0.1.1",
-    "source": "package",
-    "requested": "@attebury/topogram-template-todo@0.1.1",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.1",
-    "sourceRoot": null,
-    "includesExecutableImplementation": true
+    "module": "./implementation/index.js"
   },
   "outputs": {
     "app": {
-      "path": "./app",
-      "ownership": "generated"
+      "ownership": "generated",
+      "path": "./app"
     }
+  },
+  "template": {
+    "id": "@attebury/topogram-template-todo",
+    "includesExecutableImplementation": true,
+    "requested": "@attebury/topogram-template-todo@0.1.2",
+    "source": "package",
+    "sourceRoot": null,
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.2",
+    "version": "0.1.2"
   },
   "topology": {
     "components": [
       {
-        "id": "app_api",
-        "type": "api",
-        "projection": "proj_api",
+        "database": "app_postgres",
         "generator": {
           "id": "topogram/hono",
           "version": "1"
         },
+        "id": "app_api",
         "port": 3000,
-        "database": "app_postgres"
+        "projection": "proj_api",
+        "type": "api"
       },
       {
-        "id": "app_sveltekit",
-        "type": "web",
-        "projection": "proj_ui_web",
+        "api": "app_api",
         "generator": {
           "id": "topogram/sveltekit",
           "version": "1"
         },
+        "id": "app_sveltekit",
         "port": 5173,
-        "api": "app_api"
+        "projection": "proj_ui_web",
+        "type": "web"
       },
       {
-        "id": "app_postgres",
-        "type": "database",
-        "projection": "proj_db_postgres",
         "generator": {
           "id": "topogram/postgres",
           "version": "1"
         },
-        "port": 5432
+        "id": "app_postgres",
+        "port": 5432,
+        "projection": "proj_db_postgres",
+        "type": "database"
       }
     ]
-  }
+  },
+  "version": "0.1"
 }
