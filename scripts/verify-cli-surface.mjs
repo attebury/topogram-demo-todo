@@ -10,6 +10,7 @@ const help = childProcess.spawnSync("topogram", ["--help"], {
 });
 
 assert.equal(help.status, 0, help.stderr || help.stdout);
+assert.match(help.stdout, /topogram catalog show todo/);
 assert.match(help.stdout, /topogram source status/);
 
-console.log("Topogram CLI exposes source status.");
+console.log("Topogram CLI exposes catalog show and source status.");

@@ -31,6 +31,6 @@
     "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.23"
+    "@attebury/topogram": "^0.2.24"
   }
 }
