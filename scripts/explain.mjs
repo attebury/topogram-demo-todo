@@ -6,6 +6,7 @@ Topogram app workflow
    topogram.project.json
 
 2. Validate:
+   npm run doctor
    npm run check
 
 3. Regenerate:
@@ -20,6 +21,7 @@ Topogram app workflow
 
 Useful inspection:
    npm run check:json
+   npm run doctor
 `;
 
 console.log(message.trimEnd());

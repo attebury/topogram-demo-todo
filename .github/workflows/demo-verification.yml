@@ -41,7 +41,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: "@attebury"
       - name: Verify catalog-backed template creation
-        run: npm exec --yes --package=@attebury/topogram@0.2.44 -- topogram new "$RUNNER_TEMP/todo-from-catalog" --template todo --catalog ./topograms.catalog.json
+        run: npm exec --yes --package=@attebury/topogram@0.2.45 -- topogram new "$RUNNER_TEMP/todo-from-catalog" --template todo --catalog ./topograms.catalog.json
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
@@ -54,6 +54,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check CLI command surface
         run: npm run cli:surface
+      - name: Check setup
+        run: npm run doctor
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check catalog fixture
         run: npm run catalog:check
       - name: Check catalog access diagnostics

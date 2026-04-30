@@ -8,6 +8,7 @@ catalog resolves `todo` to `@attebury/topogram-template-todo@0.1.6`.
 ```bash
 npm install
 npm run explain
+npm run doctor
 npm run check
 npm run catalog:template-list
 npm run catalog:show
@@ -37,7 +38,7 @@ Use the built-in Topogram command so `package.json` and `package-lock.json` are
 updated from the published GitHub Packages tarball:
 
 ```bash
-NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.44
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.45
 ```
 
 The command verifies `@attebury/topogram@<version>` exists, installs

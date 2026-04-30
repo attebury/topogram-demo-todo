@@ -12,8 +12,9 @@ const help = childProcess.spawnSync(topogramBin, ["--help"], {
 });
 
 assert.equal(help.status, 0, help.stderr || help.stdout);
+assert.match(help.stdout, /topogram doctor/);
 assert.match(help.stdout, /topogram catalog show todo/);
 assert.match(help.stdout, /topogram source status/);
 assert.match(help.stdout, /topogram template list/);
 
-console.log("Topogram CLI exposes catalog, template, and source commands.");
+console.log("Topogram CLI exposes doctor, catalog, template, and source commands.");
