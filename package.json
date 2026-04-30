@@ -15,7 +15,7 @@
     "app:compile": "npm --prefix ./app run compile",
     "app:smoke": "npm --prefix ./app run smoke",
     "app:runtime-check": "npm --prefix ./app run runtime-check",
-    "app:check": "npm run app:compile && npm run app:smoke && npm run app:runtime-check",
+    "app:check": "npm run app:compile",
     "template:update:status": "topogram template update --status",
     "template:update:plan": "topogram template update --plan",
     "template:update:check": "topogram template update --check",
@@ -28,9 +28,10 @@
     "cli:surface": "node ./scripts/verify-cli-surface.mjs",
     "catalog:check": "topogram catalog check ./topograms.catalog.json",
     "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs",
-    "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs"
+    "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs",
+    "app:probe": "npm run app:smoke && npm run app:runtime-check"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.26"
+    "@attebury/topogram": "^0.2.27"
   }
 }
