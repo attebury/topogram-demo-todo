@@ -25,11 +25,12 @@
     "template:update:guard": "node ./scripts/verify-template-update-noop.mjs",
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs",
     "template:update:recommend": "topogram template update --recommend",
+    "cli:surface": "node ./scripts/verify-cli-surface.mjs",
     "catalog:check": "topogram catalog check ./topograms.catalog.json",
     "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs",
     "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.22"
+    "@attebury/topogram": "^0.2.23"
   }
 }
