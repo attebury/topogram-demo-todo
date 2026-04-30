@@ -37,8 +37,8 @@
     },
     {
       "path": "implementation/runtime/reference.js",
-      "sha256": "d7a4a6b94e5efaf783f68eaa6715ddb6550898280764d4e423fbce278d29e34c",
-      "size": 3136
+      "sha256": "634296a1f1adae6bb2d1993d92155ec379d9cf13677c511d0b35fb396a31eb23",
+      "size": 3203
     },
     {
       "path": "implementation/web/reference.js",
@@ -57,7 +57,7 @@
     },
     {
       "path": "topogram.project.json",
-      "sha256": "e450d4267a2db3725a7e52bec4d2c210fd37779cd96a729c56d428f2b508fb8f",
+      "sha256": "981767f9a2f69df5a0d6a090bbf1f491da74ff5ffb7a2a344d82474651088266",
       "size": 1345
     },
     {
@@ -392,11 +392,12 @@
     }
   ],
   "template": {
+    "catalog": null,
     "id": "@attebury/topogram-template-todo",
-    "requested": "@attebury/topogram-template-todo@0.1.2",
+    "requested": "@attebury/topogram-template-todo@0.1.3",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.2",
-    "version": "0.1.2"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.3",
+    "version": "0.1.3"
   },
   "version": "0.1"
 }

@@ -28,14 +28,14 @@ try {
     id: "todo",
     source: "./topograms.catalog.json",
     package: "@attebury/topogram-template-todo",
-    version: "0.1.2",
-    packageSpec: "@attebury/topogram-template-todo@0.1.2"
+    version: "0.1.3",
+    packageSpec: "@attebury/topogram-template-todo@0.1.3"
   };
 
   assert.equal(projectConfig.template.id, "@attebury/topogram-template-todo");
   assert.equal(projectConfig.template.source, "package");
   assert.equal(projectConfig.template.requested, "todo");
-  assert.equal(projectConfig.template.sourceSpec, "@attebury/topogram-template-todo@0.1.2");
+  assert.equal(projectConfig.template.sourceSpec, "@attebury/topogram-template-todo@0.1.3");
   assert.deepEqual(projectConfig.template.catalog, expectedCatalog);
   assert.deepEqual(fileManifest.template.catalog, expectedCatalog);
   assert.deepEqual(trustRecord.template.catalog, expectedCatalog);
