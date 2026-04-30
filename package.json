@@ -28,7 +28,7 @@
     "cli:surface": "node ./scripts/verify-cli-surface.mjs",
     "catalog:check": "topogram catalog check ./topograms.catalog.json",
     "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs",
-    "catalog:template-show": "node ./scripts/verify-catalog-template-show.mjs",
+    "catalog:show": "node ./scripts/verify-catalog-show.mjs",
     "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs",
     "template:creation-guidance": "node ./scripts/verify-template-creation-guidance.mjs",
     "update:topogram-cli": "topogram package update-cli",
@@ -36,6 +36,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.40"
+    "@attebury/topogram": "^0.2.41"
   }
 }

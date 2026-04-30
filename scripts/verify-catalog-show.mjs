@@ -48,4 +48,4 @@ assert.match(human.stdout, /Package: @attebury\/topogram-template-todo@0\.1\.6/)
 assert.match(human.stdout, /Executable implementation: yes/);
 assert.match(human.stdout, /topogram new \.\/my-app --template todo --catalog \.\/topograms\.catalog\.json/);
 
-console.log("Catalog template show describes todo.");
+console.log("Catalog show describes todo.");
