@@ -38,10 +38,24 @@ Use the built-in Topogram command so `package.json` and `package-lock.json` are
 updated from the published GitHub Packages tarball:
 
 ```bash
-NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.50
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.51
 ```
 
 The command verifies `@attebury/topogram@<version>` exists, installs
 `@attebury/topogram@^<version>`, then runs `cli:surface`,
 `catalog:show`, and `check`. After pushing, the normal Demo
 Verification workflow is the package-consumer compile/runtime gate.
+
+## Detaching Template Metadata
+
+The Todo demo keeps template metadata so it can verify template update behavior.
+For a maintained app that should fully own its local files, first review the
+plan with:
+
+```bash
+npm run template:detach:dry-run
+```
+
+Then run `npm run template:detach` when the project should stop tracking
+template update metadata. Executable implementation trust is retained when
+`implementation/` remains configured.

@@ -25,6 +25,8 @@
     "template:update:check": "topogram template update --check",
     "template:update:apply": "topogram template update --apply",
     "template:status:latest": "topogram template status --latest",
+    "template:detach": "topogram template detach",
+    "template:detach:dry-run": "topogram template detach --dry-run",
     "template:policy:check": "topogram template policy check",
     "template:update:guard": "node ./scripts/verify-template-update-noop.mjs",
     "template:update:conflict": "node ./scripts/verify-template-update-conflict.mjs",
@@ -41,6 +43,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.50"
+    "@attebury/topogram": "^0.2.51"
   }
 }
