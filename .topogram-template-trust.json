@@ -1,13 +1,13 @@
 {
   "version": "1",
   "trustPolicy": "topogram-template-executable-implementation-v1",
-  "trustedAt": "2026-04-30T04:51:56.781Z",
+  "trustedAt": "2026-04-30T05:41:50.448Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.4",
-    "requested": "@attebury/topogram-template-todo@0.1.4",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.5",
+    "requested": "@attebury/topogram-template-todo@0.1.5",
     "sourceRoot": null,
     "catalog": null
   },
@@ -19,7 +19,7 @@
   "content": {
     "algorithm": "sha256",
     "root": "implementation",
-    "digest": "4dabff900cd357e9d222c0f285a942ce96ce6025bf98f650c8ee43261ec4f5e5",
+    "digest": "a2492ea2aa523f2b08182d48adcfb4be7afe5268e522e57fb91c889e3bf4e2c2",
     "files": [
       {
         "path": "backend/reference.js",
@@ -48,8 +48,8 @@
       },
       {
         "path": "runtime/check-renderers.js",
-        "sha256": "70ad1c8444c1a5c4ac033d74bf7236cec894acbe3497bb9ff4def3dab2b11f26",
-        "size": 12956
+        "sha256": "89b17bda228d86bb6d528272f06a89f3695d2f819818cc14df99f8a947ebffee",
+        "size": 13266
       },
       {
         "path": "runtime/checks.js",
@@ -58,8 +58,8 @@
       },
       {
         "path": "runtime/reference.js",
-        "sha256": "634296a1f1adae6bb2d1993d92155ec379d9cf13677c511d0b35fb396a31eb23",
-        "size": 3203
+        "sha256": "fbbae34582d1355f647ab1133a97df9df557ee5eb7d5707960cf7bcd851381b8",
+        "size": 3256
       },
       {
         "path": "web/reference.js",
