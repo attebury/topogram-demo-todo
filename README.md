@@ -36,7 +36,7 @@ Use the built-in Topogram command so `package.json` and `package-lock.json` are
 updated from the published GitHub Packages tarball:
 
 ```bash
-NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.35
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.36
 ```
 
 The command verifies `@attebury/topogram@<version>` exists, installs
