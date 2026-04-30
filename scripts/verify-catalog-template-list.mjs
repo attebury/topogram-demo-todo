@@ -20,6 +20,26 @@ assert.ok(todo, "expected template list to include catalog template id 'todo'");
 assert.equal(todo.source, "catalog");
 assert.equal(todo.package, "@attebury/topogram-template-todo");
 assert.equal(todo.defaultVersion, "0.1.6");
+assert.deepEqual(todo.surfaces, ["web", "api", "database"]);
+assert.equal(todo.stack, "SvelteKit + Hono + Postgres");
+
+const humanList = childProcess.spawnSync(
+  "topogram",
+  ["template", "list", "--catalog", "./topograms.catalog.json"],
+  {
+    encoding: "utf8",
+    env: {
+      ...process.env,
+      PATH: process.env.PATH || ""
+    }
+  }
+);
+
+assert.equal(humanList.status, 0, humanList.stderr || humanList.stdout);
+assert.match(humanList.stdout, /Templates:/);
+assert.match(humanList.stdout, /todo@0\.1\.6/);
+assert.match(humanList.stdout, /surfaces: web, api, database \| stack: SvelteKit \+ Hono \+ Postgres \| executable: yes/);
+assert.match(humanList.stdout, /topogram new \.\/my-app --template todo/);
 
 console.log("Catalog template list includes todo.");
 

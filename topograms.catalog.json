@@ -18,7 +18,18 @@
         "scope": "@attebury",
         "includesExecutableImplementation": true,
         "notes": "CI fixture for verifying catalog template visibility."
-      }
+      },
+      "surfaces": [
+        "web",
+        "api",
+        "database"
+      ],
+      "generators": [
+        "topogram/sveltekit",
+        "topogram/hono",
+        "topogram/postgres"
+      ],
+      "stack": "SvelteKit + Hono + Postgres"
     }
   ]
 }
