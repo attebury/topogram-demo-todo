@@ -37,11 +37,11 @@ const humanList = childProcess.spawnSync(
 );
 
 assert.equal(humanList.status, 0, humanList.stderr || humanList.stdout);
-assert.match(humanList.stdout, /Available templates:/);
+assert.match(humanList.stdout, /Template starters:/);
+assert.match(humanList.stdout, /Built-ins are bundled with the CLI; catalog aliases resolve to versioned package installs/);
 assert.match(humanList.stdout, /todo@0\.1\.6/);
-assert.match(humanList.stdout, /source: catalog/);
-assert.match(humanList.stdout, /package: @attebury\/topogram-template-todo@0\.1\.6/);
-assert.match(humanList.stdout, /executable implementation: yes/);
+assert.match(humanList.stdout, /Source: catalog \| Surfaces: web, api, database \| Stack: SvelteKit \+ Hono \+ Postgres \| Executable implementation: yes/);
+assert.match(humanList.stdout, /topogram new \.\/my-app --template todo/);
 
 console.log("Catalog template list includes todo.");
 
