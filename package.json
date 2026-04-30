@@ -33,6 +33,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.28"
+    "@attebury/topogram": "^0.2.29"
   }
 }
