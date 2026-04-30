@@ -9,7 +9,13 @@
     "sourceSpec": "@attebury/topogram-template-todo@0.1.6",
     "requested": "@attebury/topogram-template-todo@0.1.6",
     "sourceRoot": null,
-    "catalog": null
+    "catalog": {
+      "id": "todo",
+      "package": "@attebury/topogram-template-todo",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.6",
+      "source": "./topograms.catalog.json",
+      "version": "0.1.6"
+    }
   },
   "implementation": {
     "id": "web-api-db-template",

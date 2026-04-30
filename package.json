@@ -5,6 +5,7 @@
   "scripts": {
     "explain": "node ./scripts/explain.mjs",
     "doctor": "topogram doctor",
+    "doctor:catalog": "node ./scripts/verify-doctor-catalog-provenance.mjs",
     "check": "topogram check",
     "check:json": "topogram check --json",
     "generate": "topogram generate",

@@ -55,7 +55,7 @@ jobs:
       - name: Check CLI command surface
         run: npm run cli:surface
       - name: Check setup
-        run: npm run doctor
+        run: npm run doctor:catalog
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check catalog fixture
