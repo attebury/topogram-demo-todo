@@ -4,10 +4,10 @@
   "trustedAt": "2026-04-30T05:41:50.448Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.5",
-    "requested": "@attebury/topogram-template-todo@0.1.5",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.6",
+    "requested": "@attebury/topogram-template-todo@0.1.6",
     "sourceRoot": null,
     "catalog": null
   },

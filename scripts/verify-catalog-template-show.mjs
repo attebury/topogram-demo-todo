@@ -19,7 +19,7 @@ assert.equal(payload.ok, true);
 assert.equal(payload.source, "catalog");
 assert.equal(payload.template.id, "todo");
 assert.equal(payload.template.kind, "template");
-assert.equal(payload.packageSpec, "@attebury/topogram-template-todo@0.1.5");
+assert.equal(payload.packageSpec, "@attebury/topogram-template-todo@0.1.6");
 assert.equal(
   payload.commands.primary,
   "topogram new ./my-app --template todo --catalog ./topograms.catalog.json"

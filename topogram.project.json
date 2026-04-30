@@ -13,11 +13,11 @@
   "template": {
     "id": "@attebury/topogram-template-todo",
     "includesExecutableImplementation": true,
-    "requested": "@attebury/topogram-template-todo@0.1.5",
+    "requested": "@attebury/topogram-template-todo@0.1.6",
     "source": "package",
     "sourceRoot": null,
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.5",
-    "version": "0.1.5"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.6",
+    "version": "0.1.6"
   },
   "topology": {
     "components": [
