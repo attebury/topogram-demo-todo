@@ -28,11 +28,12 @@
     "cli:surface": "node ./scripts/verify-cli-surface.mjs",
     "catalog:check": "topogram catalog check ./topograms.catalog.json",
     "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs",
+    "catalog:template-show": "node ./scripts/verify-catalog-template-show.mjs",
     "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs",
     "app:probe": "npm run app:smoke && npm run app:runtime-check",
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.30"
+    "@attebury/topogram": "^0.2.31"
   }
 }
