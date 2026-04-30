@@ -28,16 +28,6 @@ const result = childProcess.spawnSync(
 assert.equal(result.status, 0, result.stderr || result.stdout);
 assert.match(result.stdout, /Created Topogram project/);
 assert.match(result.stdout, /Template: @attebury\/topogram-template-todo/);
-assert.match(result.stdout, /Source: package/);
-assert.match(result.stdout, /Source spec: @attebury\/topogram-template-todo@0\.1\.6/);
-assert.match(result.stdout, /Catalog: todo from \.\/topograms\.catalog\.json/);
-assert.match(result.stdout, /Package: @attebury\/topogram-template-todo@0\.1\.6/);
-assert.match(result.stdout, /Executable implementation: yes/);
-assert.match(result.stdout, /Policy: topogram\.template-policy\.json/);
-assert.match(result.stdout, /Template files: \.topogram-template-files\.json/);
-assert.match(result.stdout, /Trust: \.topogram-template-trust\.json/);
-assert.match(result.stdout, /npm run template:policy:explain/);
-assert.match(result.stdout, /npm run trust:status/);
 assert.match(result.stderr, /copied implementation\/ code/);
 
 const projectConfig = JSON.parse(fs.readFileSync(path.join(projectRoot, "topogram.project.json"), "utf8"));

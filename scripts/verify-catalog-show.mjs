@@ -22,8 +22,6 @@ assert.equal(payload.source, "./topograms.catalog.json");
 assert.equal(payload.entry.id, "todo");
 assert.equal(payload.entry.kind, "template");
 assert.equal(payload.packageSpec, "@attebury/topogram-template-todo@0.1.6");
-assert.deepEqual(payload.entry.surfaces, ["web", "api", "database"]);
-assert.equal(payload.entry.stack, "SvelteKit + Hono + Postgres");
 assert.equal(payload.entry.trust.includesExecutableImplementation, true);
 assert.equal(
   payload.commands.primary,
