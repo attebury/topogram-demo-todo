@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import childProcess from "node:child_process";
 
+const topogramBin = process.env.TOPOGRAM_BIN || "topogram";
+
 const result = childProcess.spawnSync(
-  "topogram",
+  topogramBin,
   ["template", "list", "--json", "--catalog", "./topograms.catalog.json"],
   {
     encoding: "utf8",
@@ -24,7 +26,7 @@ assert.deepEqual(todo.surfaces, ["web", "api", "database"]);
 assert.equal(todo.stack, "SvelteKit + Hono + Postgres");
 
 const humanList = childProcess.spawnSync(
-  "topogram",
+  topogramBin,
   ["template", "list", "--catalog", "./topograms.catalog.json"],
   {
     encoding: "utf8",
@@ -36,15 +38,16 @@ const humanList = childProcess.spawnSync(
 );
 
 assert.equal(humanList.status, 0, humanList.stderr || humanList.stdout);
-assert.match(humanList.stdout, /Templates:/);
+assert.match(humanList.stdout, /Template starters:/);
+assert.match(humanList.stdout, /Built-ins are bundled with the CLI; catalog aliases resolve to versioned package installs/);
 assert.match(humanList.stdout, /todo@0\.1\.6/);
-assert.match(humanList.stdout, /surfaces: web, api, database \| stack: SvelteKit \+ Hono \+ Postgres \| executable: yes/);
+assert.match(humanList.stdout, /Source: catalog \| Surfaces: web, api, database \| Stack: SvelteKit \+ Hono \+ Postgres \| Executable implementation: yes/);
 assert.match(humanList.stdout, /topogram new \.\/my-app --template todo/);
 
 console.log("Catalog template list includes todo.");
 
 const show = childProcess.spawnSync(
-  "topogram",
+  topogramBin,
   ["catalog", "show", "todo", "--catalog", "./topograms.catalog.json", "--json"],
   {
     encoding: "utf8",
