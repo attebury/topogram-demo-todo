@@ -41,7 +41,7 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: "@attebury"
       - name: Verify template creation
-        run: npm exec --yes --package=@attebury/topogram@0.2.41 -- topogram new "$RUNNER_TEMP/todo-from-template" --template @attebury/topogram-template-todo@0.1.6
+        run: npm exec --yes --package=@attebury/topogram@0.2.42 -- topogram new "$RUNNER_TEMP/todo-from-template" --template @attebury/topogram-template-todo@0.1.6
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
@@ -56,6 +56,10 @@ jobs:
         run: npm run cli:surface
       - name: Check catalog fixture
         run: npm run catalog:check
+      - name: Check catalog access diagnostics
+        run: npm run catalog:doctor
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Check catalog template visibility
         run: npm run catalog:template-list
       - name: Check catalog show
