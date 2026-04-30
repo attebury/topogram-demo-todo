@@ -29,3 +29,17 @@ Runtime checks intentionally exercise Todo template semantics. CI uses a
 manager/admin bearer-demo identity for manager/admin endpoints such as export
 read/download/delete, while generated web checks still verify user-scoped app
 behavior.
+
+## Updating Topogram CLI
+
+Use the helper so `package.json` and `package-lock.json` are updated from the
+published GitHub Packages tarball:
+
+```bash
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.31
+```
+
+The script verifies `@attebury/topogram@<version>` exists, installs
+`@attebury/topogram@^<version>`, then runs `cli:surface`,
+`catalog:template-show`, and `check`. After pushing, the normal Demo
+Verification workflow is the package-consumer compile/runtime gate.

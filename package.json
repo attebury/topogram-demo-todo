@@ -30,6 +30,7 @@
     "catalog:template-list": "node ./scripts/verify-catalog-template-list.mjs",
     "catalog:template-show": "node ./scripts/verify-catalog-template-show.mjs",
     "catalog:provenance": "node ./scripts/verify-catalog-template-provenance.mjs",
+    "update:topogram-cli": "node ./scripts/update-topogram-cli.mjs",
     "app:probe": "npm run app:smoke && npm run app:runtime-check",
     "app:runtime": "npm --prefix ./app run runtime"
   },
