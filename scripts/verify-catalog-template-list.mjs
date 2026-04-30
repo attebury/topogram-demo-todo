@@ -22,3 +22,26 @@ assert.equal(todo.package, "@attebury/topogram-template-todo");
 assert.equal(todo.defaultVersion, "0.1.2");
 
 console.log("Catalog template list includes todo.");
+
+const show = childProcess.spawnSync(
+  "topogram",
+  ["catalog", "show", "todo", "--catalog", "./topograms.catalog.json", "--json"],
+  {
+    encoding: "utf8",
+    env: {
+      ...process.env,
+      PATH: process.env.PATH || ""
+    }
+  }
+);
+
+assert.equal(show.status, 0, show.stderr || show.stdout);
+const showPayload = JSON.parse(show.stdout);
+assert.equal(showPayload.entry.kind, "template");
+assert.equal(showPayload.packageSpec, "@attebury/topogram-template-todo@0.1.2");
+assert.equal(
+  showPayload.commands.primary,
+  "topogram new ./my-app --template todo --catalog ./topograms.catalog.json"
+);
+
+console.log("Catalog show recommends todo template creation.");
