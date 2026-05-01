@@ -5,6 +5,23 @@ catalog resolves `todo` to `@attebury/topogram-template-todo@0.1.6`.
 
 ## Workflow
 
+Create a fresh Todo app from the catalog with:
+
+```bash
+topogram template list
+topogram catalog show todo
+topogram new ./todo-demo --template todo
+cd ./todo-demo
+npm install
+npm run doctor
+npm run check
+npm run generate
+npm run verify
+```
+
+This repository is the maintained generated consumer for that flow. Day-to-day
+checks here are:
+
 ```bash
 npm install
 npm run explain
