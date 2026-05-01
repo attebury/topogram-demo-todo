@@ -16,5 +16,6 @@ assert.match(help.stdout, /topogram doctor/);
 assert.match(help.stdout, /topogram catalog show todo/);
 assert.match(help.stdout, /topogram source status/);
 assert.match(help.stdout, /topogram template list/);
+assert.match(help.stdout, /topogram template explain/);
 
 console.log("Topogram CLI exposes doctor, catalog, template, and source commands.");

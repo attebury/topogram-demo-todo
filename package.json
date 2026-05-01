@@ -24,6 +24,7 @@
     "template:update:plan": "topogram template update --plan",
     "template:update:check": "topogram template update --check",
     "template:update:apply": "topogram template update --apply",
+    "template:explain": "topogram template explain",
     "template:status:latest": "topogram template status --latest",
     "template:detach": "topogram template detach",
     "template:detach:dry-run": "topogram template detach --dry-run",
@@ -43,6 +44,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.51"
+    "@attebury/topogram": "^0.2.53"
   }
 }
