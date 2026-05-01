@@ -47,8 +47,8 @@
     },
     {
       "path": "implementation/web/renderers.js",
-      "sha256": "ddbee18922d0a57f0b69eb433a6df909958c5eae923530efe248ef1a6867588c",
-      "size": 44627
+      "sha256": "b954312137739a51ffb573f55adb0555020ff20ded0dd7327a5a9d35e05ebb63",
+      "size": 45307
     },
     {
       "path": "implementation/web/screens-reference.js",
@@ -57,7 +57,7 @@
     },
     {
       "path": "topogram.project.json",
-      "sha256": "7350779d8ecfe2e943ae94782604198fc365e8fab421f21eb441f2b5bb3b5640",
+      "sha256": "9ffbb8bdfdd16afb353d38fbdc1bfd32af471d476cf0f1deedabf2a9bd393689",
       "size": 1574
     },
     {
@@ -415,15 +415,15 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.7",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.9",
       "source": "./topograms.catalog.json",
-      "version": "0.1.7"
+      "version": "0.1.9"
     },
     "id": "@attebury/topogram-template-todo",
-    "requested": "@attebury/topogram-template-todo@0.1.7",
+    "requested": "@attebury/topogram-template-todo@0.1.9",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.7",
-    "version": "0.1.7"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.9",
+    "version": "0.1.9"
   },
   "version": "0.1"
 }

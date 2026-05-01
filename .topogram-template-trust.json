@@ -1,20 +1,20 @@
 {
   "version": "1",
   "trustPolicy": "topogram-template-executable-implementation-v1",
-  "trustedAt": "2026-05-01T11:55:49.436Z",
+  "trustedAt": "2026-05-01T12:57:19.558Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
-    "version": "0.1.7",
+    "version": "0.1.9",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.7",
-    "requested": "@attebury/topogram-template-todo@0.1.7",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.9",
+    "requested": "@attebury/topogram-template-todo@0.1.9",
     "sourceRoot": null,
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.7",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.9",
       "source": "./topograms.catalog.json",
-      "version": "0.1.7"
+      "version": "0.1.9"
     }
   },
   "implementation": {
@@ -25,7 +25,7 @@
   "content": {
     "algorithm": "sha256",
     "root": "implementation",
-    "digest": "a2492ea2aa523f2b08182d48adcfb4be7afe5268e522e57fb91c889e3bf4e2c2",
+    "digest": "3ccee15b53c3033370f0cb5138b5a0620cc8ebb581ab63ea9602a92ec8572edd",
     "files": [
       {
         "path": "backend/reference.js",
@@ -74,8 +74,8 @@
       },
       {
         "path": "web/renderers.js",
-        "sha256": "ddbee18922d0a57f0b69eb433a6df909958c5eae923530efe248ef1a6867588c",
-        "size": 44627
+        "sha256": "b954312137739a51ffb573f55adb0555020ff20ded0dd7327a5a9d35e05ebb63",
+        "size": 45307
       },
       {
         "path": "web/screens-reference.js",

@@ -27,6 +27,28 @@
         <a class="button-link" href="/tasks/new">Create Task</a>
       </div>
 
+      <section class="component-card component-summary" data-topogram-component="component_ui_task_summary">
+          <div>
+            <p class="component-eyebrow">Component</p>
+            <h2>Task Summary</h2>
+          </div>
+          <div class="summary-grid">
+            <div>
+              <strong>{data.result.items.length}</strong>
+              <span>Total</span>
+            </div>
+            <div>
+              <strong>{data.result.items.filter((item: any) => item.status === "active").length}</strong>
+              <span>Active</span>
+            </div>
+            <div>
+              <strong>{data.result.items.filter((item: any) => item.status === "completed").length}</strong>
+              <span>Completed</span>
+            </div>
+          </div>
+        </section>
+
+
       <form class="filters" method="GET">
         <label>
           Project
@@ -77,21 +99,42 @@
         </div>
       {:else}
         <p class="muted">Showing {data.result.items.length} task{data.result.items.length === 1 ? "" : "s"}.</p>
-        <ul class="task-list">
-          {#each data.result.items as task}
-            <li>
-              <div class="task-meta">
-                <a href={'/tasks/' + task.id}><strong>{task.title}</strong></a>
-                {#if task.description}<span class="muted">{task.description}</span>{/if}
-                <span class="muted">Priority: {task.priority ?? "medium"}</span>
-              </div>
-              <div class="button-row">
-                <span class="badge">{task.priority ?? "medium"}</span>
-                <span class="badge">{task.status}</span>
-              </div>
-            </li>
-          {/each}
-        </ul>
+        <div class="component-card component-table" data-topogram-component="component_ui_task_table">
+          <div class="component-header">
+            <div>
+              <p class="component-eyebrow">Component</p>
+              <h2>Task Table</h2>
+            </div>
+            <span class="badge">{data.result.items.length} items</span>
+          </div>
+          <div class="table-wrap component-table-wrap">
+            <table class="resource-table data-grid">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Owner</th>
+                </tr>
+              </thead>
+              <tbody>
+                {#each data.result.items as task}
+                  <tr>
+                    <td>
+                      <div class="cell-stack">
+                        <a href={'/tasks/' + task.id}><strong>{task.title}</strong></a>
+                        {#if task.description}<span class="cell-secondary">{task.description}</span>{/if}
+                      </div>
+                    </td>
+                    <td><span class="badge">{task.status}</span></td>
+                    <td>{task.priority ?? "medium"}</td>
+                    <td>{task.owner_id ?? task.ownerId ?? "Unassigned"}</td>
+                  </tr>
+                {/each}
+              </tbody>
+            </table>
+          </div>
+        </div>
         {#if nextHref}
           <p><a class="button-link secondary" href={nextHref}>Next Page</a></p>
         {/if}

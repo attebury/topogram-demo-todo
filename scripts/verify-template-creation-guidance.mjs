@@ -32,7 +32,7 @@ assert.match(result.stderr, /copied implementation\/ code/);
 
 const projectConfig = JSON.parse(fs.readFileSync(path.join(projectRoot, "topogram.project.json"), "utf8"));
 assert.equal(projectConfig.template.requested, "todo");
-assert.equal(projectConfig.template.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.7");
+assert.equal(projectConfig.template.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.9");
 assert.equal(fs.existsSync(path.join(projectRoot, ".topogram-template-trust.json")), true);
 assert.equal(fs.existsSync(path.join(projectRoot, "topogram.template-policy.json")), true);
 assert.equal(fs.existsSync(path.join(projectRoot, "implementation", "index.js")), true);
