@@ -12,6 +12,7 @@
     "source:status:remote:check": "node ./scripts/verify-source-status.mjs --remote",
     "check": "topogram check",
     "check:json": "topogram check --json",
+    "component:conformance": "node ./scripts/verify-component-conformance.mjs",
     "generate": "topogram generate",
     "verify": "npm run app:compile",
     "bootstrap": "npm run app:bootstrap",
@@ -47,6 +48,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.3.11"
+    "@attebury/topogram": "^0.3.12"
   }
 }
