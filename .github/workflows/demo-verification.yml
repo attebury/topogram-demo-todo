@@ -104,6 +104,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate app
         run: npm run generate
+      - name: Verify generated component markers
+        run: npm run app:components
       - name: Verify app compile
         run: npm run verify
       - name: Write runtime CI env

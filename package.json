@@ -19,9 +19,10 @@
     "app:bootstrap": "npm --prefix ./app run bootstrap",
     "app:dev": "npm --prefix ./app run dev",
     "app:compile": "npm --prefix ./app run compile",
+    "app:components": "node ./scripts/verify-generated-component-markers.mjs",
     "app:smoke": "npm --prefix ./app run smoke",
     "app:runtime-check": "npm --prefix ./app run runtime-check",
-    "app:check": "npm run app:compile",
+    "app:check": "npm run app:components && npm run app:compile",
     "template:update:status": "topogram template update --status",
     "template:update:plan": "topogram template update --plan",
     "template:update:check": "topogram template update --check",
@@ -46,6 +47,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.3.9"
+    "@attebury/topogram": "^0.3.10"
   }
 }
