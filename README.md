@@ -34,7 +34,7 @@ behavior.
 
 ## Updating Topogram CLI
 
-Use the built-in Topogram command so `package.json` and `package-lock.json` are
+Use the Topogram CLI command so `package.json` and `package-lock.json` are
 updated from the published GitHub Packages tarball:
 
 ```bash
