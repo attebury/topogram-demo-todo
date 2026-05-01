@@ -38,7 +38,7 @@ Use the built-in Topogram command so `package.json` and `package-lock.json` are
 updated from the published GitHub Packages tarball:
 
 ```bash
-NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.53
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- 0.2.54
 ```
 
 The command verifies `@attebury/topogram@<version>` exists, installs
@@ -59,3 +59,6 @@ npm run template:detach:dry-run
 Then run `npm run template:detach` when the project should stop tracking
 template update metadata. Executable implementation trust is retained when
 `implementation/` remains configured.
+Use `npm run source:status` for local provenance, trust, and baseline checks.
+Use `npm run source:status:remote` only when you intentionally want package
+registry status.
