@@ -38,15 +38,15 @@ Use the Topogram CLI command so `package.json` and `package-lock.json` are
 updated from published GitHub Packages registry metadata:
 
 ```bash
-NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- <version>
+NODE_AUTH_TOKEN=<github-token-with-package-read> npm run update:topogram-cli -- --latest
 ```
 
-The command verifies `@attebury/topogram@<version>` exists, installs
+The command resolves the latest published CLI package, installs
 `@attebury/topogram@^<version>`, refreshes stale lockfile tarball metadata when
-needed, then runs `cli:surface`, `doctor`, `catalog:show`, and `check`. Do not
-hand-edit `package-lock.json` tarball URLs or integrity values. After pushing,
-the normal Demo Verification workflow is the package-consumer compile/runtime
-gate.
+needed, updates `topogram-cli.version`, then runs `cli:surface`, `doctor`,
+`catalog:show`, and `check`. Do not hand-edit `package-lock.json` tarball URLs
+or integrity values. After pushing, the normal Demo Verification workflow is
+the package-consumer compile/runtime gate.
 
 ## Detaching Template Metadata
 
