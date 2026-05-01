@@ -19,7 +19,7 @@ assert.equal(payload.catalog.catalog.reachable, true);
 assert.equal(payload.catalog.catalog.entries, 1);
 const todo = payload.catalog.packages.find((item) => item.id === "todo");
 assert.ok(todo, "expected doctor to check catalog-provenance todo package");
-assert.equal(todo.packageSpec, "@attebury/topogram-template-todo@0.1.6");
+assert.equal(todo.packageSpec, "@attebury/topogram-template-todo@0.1.7");
 assert.equal(todo.ok, true);
 assert.equal(
   payload.diagnostics.some((diagnostic) => diagnostic.code === "catalog_check_skipped"),

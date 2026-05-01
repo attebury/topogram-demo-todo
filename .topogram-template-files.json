@@ -57,8 +57,8 @@
     },
     {
       "path": "topogram.project.json",
-      "sha256": "ed82c05acc8d3cedd861e8b7261e6af883edd04b6a7b02c5c5ebb05192157a24",
-      "size": 1345
+      "sha256": "7350779d8ecfe2e943ae94782604198fc365e8fab421f21eb441f2b5bb3b5640",
+      "size": 1574
     },
     {
       "path": "topogram/actors/actor-user.tg",
@@ -151,6 +151,26 @@
       "size": 268
     },
     {
+      "path": "topogram/components/component-ui-task-board.tg",
+      "sha256": "dc6e52f93ae3803b4830be9adcd2065eabecd981c34a8aca2b27011ded3d9f6a",
+      "size": 822
+    },
+    {
+      "path": "topogram/components/component-ui-task-calendar.tg",
+      "sha256": "35796cbb6d21f7030a561c6a2b40db54199bd5ee7bce59e398caf2601c90f9e6",
+      "size": 659
+    },
+    {
+      "path": "topogram/components/component-ui-task-summary.tg",
+      "sha256": "1f0b95d34ed138eaba95d32c726a52d5b1307a867501d2ff5e439933bd5dcc94",
+      "size": 482
+    },
+    {
+      "path": "topogram/components/component-ui-task-table.tg",
+      "sha256": "91e0c2de152ed50ef2e345fd6d6165d75f558b90ffee821b5540092564366fc2",
+      "size": 1025
+    },
+    {
       "path": "topogram/decisions/decision-task-ownership.tg",
       "sha256": "0fbd07c36ecd6b7b6fdb180f453cdb60c42e27aaf54f473ad0e6653582402586",
       "size": 274
@@ -222,8 +242,8 @@
     },
     {
       "path": "topogram/projections/proj-ui-shared.tg",
-      "sha256": "b85ba6ace56c970fa05df484fc6c870e011b7dca67d3f187f8acebe416b933ea",
-      "size": 8050
+      "sha256": "8d89da64869923d677a1acba9204a3fa5fcd25c83f93432d0d024619696c9402",
+      "size": 8689
     },
     {
       "path": "topogram/projections/proj-ui-web-react.tg",
@@ -395,15 +415,15 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.6",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.7",
       "source": "./topograms.catalog.json",
-      "version": "0.1.6"
+      "version": "0.1.7"
     },
     "id": "@attebury/topogram-template-todo",
-    "requested": "@attebury/topogram-template-todo@0.1.6",
+    "requested": "@attebury/topogram-template-todo@0.1.7",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.6",
-    "version": "0.1.6"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.7",
+    "version": "0.1.7"
   },
   "version": "0.1"
 }

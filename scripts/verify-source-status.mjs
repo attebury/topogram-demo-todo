@@ -19,14 +19,14 @@ const payload = JSON.parse(result.stdout);
 
 assert.equal(payload.project.catalog.id, "todo");
 assert.equal(payload.project.catalog.package, "@attebury/topogram-template-todo");
-assert.equal(payload.project.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.6");
+assert.equal(payload.project.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.7");
 assert.equal(payload.project.template.id, "@attebury/topogram-template-todo");
 assert.equal(payload.project.template.source, "package");
-assert.equal(payload.project.template.sourceSpec, "@attebury/topogram-template-todo@0.1.6");
+assert.equal(payload.project.template.sourceSpec, "@attebury/topogram-template-todo@0.1.7");
 assert.equal(payload.project.package.package, "@attebury/topogram-template-todo");
-assert.equal(payload.project.package.packageSpec, "@attebury/topogram-template-todo@0.1.6");
+assert.equal(payload.project.package.packageSpec, "@attebury/topogram-template-todo@0.1.7");
 if (mode === "remote") {
-  assert.equal(payload.project.package.currentVersion, "0.1.6");
+  assert.equal(payload.project.package.currentVersion, "0.1.7");
   assert.equal(payload.project.packageChecks.mode, "remote");
   assert.equal(payload.project.packageChecks.skipped, false);
 } else {
@@ -40,16 +40,18 @@ assert.equal(payload.project.trust.status, "trusted");
 assert.equal(payload.project.templateOwnedBaseline, undefined);
 assert.equal(payload.project.templateBaseline.exists, true);
 assert.equal(payload.project.templateBaseline.trustedFiles > 0, true);
-assert.equal(payload.project.templateBaseline.status, "changed");
-assert.equal(payload.project.templateBaseline.state, "diverged");
-assert.equal(payload.project.templateBaseline.meaning, "local-project-owns-changes");
-assert.equal(payload.project.templateBaseline.localOwnership, true);
+assert.equal(payload.project.templateBaseline.status, "clean");
+assert.equal(payload.project.templateBaseline.state, "matches-template");
+assert.equal(payload.project.templateBaseline.meaning, "matches-template-baseline");
+assert.equal(payload.project.templateBaseline.localOwnership, false);
 assert.equal(payload.project.templateBaseline.changedAllowed, true);
 assert.equal(payload.project.templateBaseline.blocksCheck, false);
 assert.equal(payload.project.templateBaseline.blocksGenerate, false);
 assert.equal(Array.isArray(payload.project.templateBaseline.content.changed), true);
 assert.equal(Array.isArray(payload.project.templateBaseline.content.added), true);
 assert.equal(Array.isArray(payload.project.templateBaseline.content.removed), true);
-assert.deepEqual(payload.project.templateBaseline.content.changed, ["topogram.project.json"]);
+assert.deepEqual(payload.project.templateBaseline.content.changed, []);
+assert.deepEqual(payload.project.templateBaseline.content.added, []);
+assert.deepEqual(payload.project.templateBaseline.content.removed, []);
 
-console.log(`Source status ${mode} mode reports catalog, template, package, trust, and local-owned baseline divergence.`);
+console.log(`Source status ${mode} mode reports catalog, template, package, trust, and clean template baseline.`);

@@ -17,7 +17,385 @@
     "ui_contract",
     "web_app"
   ],
-  "components": {},
+  "components": {
+    "component_ui_task_board": {
+      "type": "component_contract",
+      "id": "component_ui_task_board",
+      "name": "Task Board",
+      "description": "Reusable kanban-style task board grouped by status",
+      "category": "collection",
+      "version": "1.0",
+      "status": "active",
+      "props": [
+        {
+          "name": "columns",
+          "type": "array",
+          "requiredness": "required",
+          "defaultValue": null
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "requiredness": "optional",
+          "defaultValue": false
+        },
+        {
+          "name": "selected_id",
+          "type": "text",
+          "requiredness": "optional",
+          "defaultValue": null
+        }
+      ],
+      "events": [
+        {
+          "id": "card_select",
+          "shape": {
+            "id": "shape_output_task_card",
+            "kind": "shape"
+          }
+        },
+        {
+          "id": "card_move",
+          "shape": {
+            "id": "shape_input_update_task",
+            "kind": "shape"
+          }
+        }
+      ],
+      "slots": [
+        {
+          "id": "toolbar",
+          "description": "Board actions"
+        },
+        {
+          "id": "empty_state",
+          "description": "Empty board content"
+        }
+      ],
+      "behavior": [
+        "selection",
+        "grouping",
+        "drag_drop",
+        "optimistic_update"
+      ],
+      "behaviors": [
+        {
+          "kind": "selection",
+          "directives": {
+            "mode": "single",
+            "state": "selected_id",
+            "emits": "card_select"
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "grouping",
+          "directives": {
+            "fields": [
+              "status"
+            ]
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "drag_drop",
+          "directives": {
+            "axis": "horizontal",
+            "reorder": true
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "optimistic_update",
+          "directives": {
+            "actions": [
+              "card_move"
+            ],
+            "rollback": true
+          },
+          "source": "structured"
+        }
+      ],
+      "patterns": [
+        "board_view",
+        "resource_cards"
+      ],
+      "regions": [
+        "results",
+        "toolbar"
+      ],
+      "approvals": [],
+      "lookups": [],
+      "dependencies": []
+    },
+    "component_ui_task_calendar": {
+      "type": "component_contract",
+      "id": "component_ui_task_calendar",
+      "name": "Task Calendar",
+      "description": "Reusable calendar view for scheduled tasks",
+      "category": "collection",
+      "version": "1.0",
+      "status": "active",
+      "props": [
+        {
+          "name": "events",
+          "type": "array",
+          "requiredness": "required",
+          "defaultValue": null
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "requiredness": "optional",
+          "defaultValue": false
+        },
+        {
+          "name": "selected_id",
+          "type": "text",
+          "requiredness": "optional",
+          "defaultValue": null
+        }
+      ],
+      "events": [
+        {
+          "id": "event_select",
+          "shape": {
+            "id": "shape_output_task_card",
+            "kind": "shape"
+          }
+        }
+      ],
+      "slots": [
+        {
+          "id": "toolbar",
+          "description": "Calendar controls"
+        },
+        {
+          "id": "empty_state",
+          "description": "Empty calendar content"
+        }
+      ],
+      "behavior": [
+        "selection",
+        "filtering"
+      ],
+      "behaviors": [
+        {
+          "kind": "selection",
+          "directives": {
+            "mode": "single",
+            "state": "selected_id",
+            "emits": "event_select"
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "filtering",
+          "directives": {
+            "fields": [
+              "status",
+              "ownerId"
+            ]
+          },
+          "source": "structured"
+        }
+      ],
+      "patterns": [
+        "calendar_view"
+      ],
+      "regions": [
+        "results",
+        "toolbar"
+      ],
+      "approvals": [],
+      "lookups": [],
+      "dependencies": []
+    },
+    "component_ui_task_summary": {
+      "type": "component_contract",
+      "id": "component_ui_task_summary",
+      "name": "Task Summary",
+      "description": "Reusable summary metrics for task workload state",
+      "category": "display",
+      "version": "1.0",
+      "status": "active",
+      "props": [
+        {
+          "name": "metrics",
+          "type": "object",
+          "requiredness": "required",
+          "defaultValue": null
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "requiredness": "optional",
+          "defaultValue": false
+        }
+      ],
+      "events": [],
+      "slots": [
+        {
+          "id": "empty_state",
+          "description": "Summary unavailable content"
+        }
+      ],
+      "behavior": [
+        "realtime_update"
+      ],
+      "behaviors": [
+        {
+          "kind": "realtime_update",
+          "directives": {
+            "source": "cap_list_tasks",
+            "merge": "replace"
+          },
+          "source": "structured"
+        }
+      ],
+      "patterns": [
+        "summary_stats"
+      ],
+      "regions": [
+        "hero",
+        "summary"
+      ],
+      "approvals": [],
+      "lookups": [],
+      "dependencies": []
+    },
+    "component_ui_task_table": {
+      "type": "component_contract",
+      "id": "component_ui_task_table",
+      "name": "Task Table",
+      "description": "Reusable tabular task collection with selection, sorting, filtering, and export affordances",
+      "category": "collection",
+      "version": "1.0",
+      "status": "active",
+      "props": [
+        {
+          "name": "rows",
+          "type": "array",
+          "requiredness": "required",
+          "defaultValue": null
+        },
+        {
+          "name": "selected_ids",
+          "type": "array",
+          "requiredness": "optional",
+          "defaultValue": []
+        },
+        {
+          "name": "loading",
+          "type": "boolean",
+          "requiredness": "optional",
+          "defaultValue": false
+        }
+      ],
+      "events": [
+        {
+          "id": "row_select",
+          "shape": {
+            "id": "shape_output_task_card",
+            "kind": "shape"
+          }
+        },
+        {
+          "id": "export_request",
+          "shape": {
+            "id": "shape_input_export_tasks",
+            "kind": "shape"
+          }
+        }
+      ],
+      "slots": [
+        {
+          "id": "toolbar",
+          "description": "Table actions and filters"
+        },
+        {
+          "id": "empty_state",
+          "description": "Empty task list content"
+        }
+      ],
+      "behavior": [
+        "selection",
+        "sorting",
+        "filtering",
+        "pagination",
+        "bulk_action"
+      ],
+      "behaviors": [
+        {
+          "kind": "selection",
+          "directives": {
+            "mode": "multi",
+            "state": "selected_ids",
+            "emits": "row_select"
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "sorting",
+          "directives": {
+            "fields": [
+              "title",
+              "status",
+              "priority",
+              "dueAt",
+              "created_at"
+            ],
+            "default": [
+              "created_at",
+              "desc"
+            ]
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "filtering",
+          "directives": {
+            "fields": [
+              "project_id",
+              "owner_id",
+              "status"
+            ]
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "pagination",
+          "directives": {
+            "mode": "cursor",
+            "page_size": 25
+          },
+          "source": "structured"
+        },
+        {
+          "kind": "bulk_action",
+          "directives": {
+            "actions": [
+              "export_request"
+            ],
+            "state": "selected_ids",
+            "emits": "export_request"
+          },
+          "source": "structured"
+        }
+      ],
+      "patterns": [
+        "resource_table",
+        "data_grid_view"
+      ],
+      "regions": [
+        "results",
+        "toolbar"
+      ],
+      "approvals": [],
+      "lookups": [],
+      "dependencies": []
+    }
+  },
   "appShell": {
     "brand": "Topogram Todo",
     "shell": "bottom_tabs",
@@ -1013,7 +1391,65 @@
           "variant": null
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "type": "ui_component_usage",
+          "region": "hero",
+          "component": {
+            "id": "component_ui_task_summary",
+            "name": "Task Summary",
+            "category": "display",
+            "version": "1.0"
+          },
+          "dataBindings": [
+            {
+              "prop": "metrics",
+              "source": {
+                "id": "cap_list_tasks",
+                "kind": "capability"
+              }
+            }
+          ],
+          "eventBindings": []
+        },
+        {
+          "type": "ui_component_usage",
+          "region": "results",
+          "component": {
+            "id": "component_ui_task_table",
+            "name": "Task Table",
+            "category": "collection",
+            "version": "1.0"
+          },
+          "dataBindings": [
+            {
+              "prop": "rows",
+              "source": {
+                "id": "cap_list_tasks",
+                "kind": "capability"
+              }
+            }
+          ],
+          "eventBindings": [
+            {
+              "event": "row_select",
+              "action": "navigate",
+              "target": {
+                "id": "task_detail",
+                "kind": "screen"
+              }
+            },
+            {
+              "event": "export_request",
+              "action": "action",
+              "target": {
+                "id": "cap_export_tasks",
+                "kind": "capability"
+              }
+            }
+          ]
+        }
+      ],
       "patterns": [
         "summary_stats",
         "action_bar",
@@ -1109,7 +1545,45 @@
           "variant": null
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "type": "ui_component_usage",
+          "region": "results",
+          "component": {
+            "id": "component_ui_task_board",
+            "name": "Task Board",
+            "category": "collection",
+            "version": "1.0"
+          },
+          "dataBindings": [
+            {
+              "prop": "columns",
+              "source": {
+                "id": "cap_list_tasks",
+                "kind": "capability"
+              }
+            }
+          ],
+          "eventBindings": [
+            {
+              "event": "card_select",
+              "action": "navigate",
+              "target": {
+                "id": "task_detail",
+                "kind": "screen"
+              }
+            },
+            {
+              "event": "card_move",
+              "action": "action",
+              "target": {
+                "id": "cap_update_task",
+                "kind": "capability"
+              }
+            }
+          ]
+        }
+      ],
       "patterns": [
         "action_bar",
         "board_view"
@@ -1202,7 +1676,37 @@
           "variant": null
         }
       ],
-      "components": [],
+      "components": [
+        {
+          "type": "ui_component_usage",
+          "region": "results",
+          "component": {
+            "id": "component_ui_task_calendar",
+            "name": "Task Calendar",
+            "category": "collection",
+            "version": "1.0"
+          },
+          "dataBindings": [
+            {
+              "prop": "events",
+              "source": {
+                "id": "cap_list_tasks",
+                "kind": "capability"
+              }
+            }
+          ],
+          "eventBindings": [
+            {
+              "event": "event_select",
+              "action": "navigate",
+              "target": {
+                "id": "task_detail",
+                "kind": "screen"
+              }
+            }
+          ]
+        }
+      ],
       "patterns": [
         "action_bar",
         "calendar_view"
