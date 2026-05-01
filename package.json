@@ -7,7 +7,7 @@
     "doctor": "topogram doctor",
     "doctor:catalog": "node ./scripts/verify-doctor-catalog-provenance.mjs",
     "source:status": "topogram source status --local",
-    "source:status:remote": "topogram source status",
+    "source:status:remote": "topogram source status --remote",
     "source:status:check": "node ./scripts/verify-source-status.mjs --local",
     "source:status:remote:check": "node ./scripts/verify-source-status.mjs --remote",
     "check": "topogram check",
@@ -46,6 +46,6 @@
     "app:runtime": "npm --prefix ./app run runtime"
   },
   "devDependencies": {
-    "@attebury/topogram": "^0.2.54"
+    "@attebury/topogram": "^0.2.55"
   }
 }
