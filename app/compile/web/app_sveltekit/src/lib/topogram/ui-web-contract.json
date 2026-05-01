@@ -17,6 +17,7 @@
     "ui_contract",
     "web_app"
   ],
+  "components": {},
   "appShell": {
     "brand": "Topogram Todo",
     "shell": "bottom_tabs",
@@ -347,6 +348,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "resource_table"
       ],
@@ -424,6 +426,7 @@
       ],
       "lookups": [],
       "regions": [],
+      "components": [],
       "patterns": [
         "detail_panel"
       ],
@@ -494,6 +497,7 @@
         }
       ],
       "regions": [],
+      "components": [],
       "patterns": [
         "edit_form"
       ],
@@ -562,6 +566,7 @@
         }
       ],
       "regions": [],
+      "components": [],
       "patterns": [
         "edit_form"
       ],
@@ -665,6 +670,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "resource_table"
       ],
@@ -742,6 +748,7 @@
       ],
       "lookups": [],
       "regions": [],
+      "components": [],
       "patterns": [
         "detail_panel"
       ],
@@ -802,6 +809,7 @@
       "visibility": [],
       "lookups": [],
       "regions": [],
+      "components": [],
       "patterns": [
         "edit_form"
       ],
@@ -860,6 +868,7 @@
       "visibility": [],
       "lookups": [],
       "regions": [],
+      "components": [],
       "patterns": [
         "edit_form"
       ],
@@ -1004,6 +1013,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "summary_stats",
         "action_bar",
@@ -1099,6 +1109,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "action_bar",
         "board_view"
@@ -1191,6 +1202,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "action_bar",
         "calendar_view"
@@ -1331,6 +1343,7 @@
           "variant": null
         }
       ],
+      "components": [],
       "patterns": [
         "detail_panel",
         "activity_feed"
@@ -1418,6 +1431,7 @@
         }
       ],
       "regions": [],
+      "components": [],
       "patterns": [],
       "route": "/tasks/new",
       "web": {
@@ -1484,6 +1498,7 @@
         }
       ],
       "regions": [],
+      "components": [],
       "patterns": [
         "edit_form"
       ],
@@ -1545,6 +1560,7 @@
       "visibility": [],
       "lookups": [],
       "regions": [],
+      "components": [],
       "patterns": [],
       "route": "/task-exports/:job_id",
       "web": {
