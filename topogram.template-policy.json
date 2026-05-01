@@ -10,6 +10,8 @@
     "@attebury/topogram-template-todo"
   ],
   "executableImplementation": "allow",
-  "pinnedVersions": {},
+  "pinnedVersions": {
+    "@attebury/topogram-template-todo": "0.1.11"
+  },
   "version": "0.1"
 }

@@ -57,7 +57,7 @@
     },
     {
       "path": "topogram.project.json",
-      "sha256": "2129e25c4c8590c075c6fb655f7c5f4d200c77970a923b565d02a8efdfb8e22d",
+      "sha256": "9a445fe3e17b26e3de3324dae508d69c9968fc1e3da026f8b26b388e5a275ace",
       "size": 1579
     },
     {
@@ -415,15 +415,15 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.10",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.11",
       "source": "./topograms.catalog.json",
-      "version": "0.1.10"
+      "version": "0.1.11"
     },
     "id": "@attebury/topogram-template-todo",
-    "requested": "@attebury/topogram-template-todo@0.1.10",
+    "requested": "@attebury/topogram-template-todo@0.1.11",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.10",
-    "version": "0.1.10"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.11",
+    "version": "0.1.11"
   },
   "version": "0.1"
 }

@@ -23,6 +23,7 @@ function copyProject() {
 
 function writeCandidateTemplate() {
   const projectConfig = JSON.parse(fs.readFileSync(path.join(projectRoot, "topogram.project.json"), "utf8"));
+  const candidateVersion = `${projectConfig.template.version}-conflict-proof`;
   fs.mkdirSync(candidateRoot, { recursive: true });
   fs.cpSync(path.join(projectRoot, "topogram"), path.join(candidateRoot, "topogram"), { recursive: true });
   fs.cpSync(path.join(projectRoot, "implementation"), path.join(candidateRoot, "implementation"), { recursive: true });
@@ -31,7 +32,7 @@ function writeCandidateTemplate() {
     path.join(candidateRoot, "topogram-template.json"),
     `${JSON.stringify({
       id: projectConfig.template.id,
-      version: `${projectConfig.template.version}-conflict-proof`,
+      version: candidateVersion,
       kind: "starter",
       topogramVersion: "^0.2.0",
       includesExecutableImplementation: true,
@@ -39,6 +40,11 @@ function writeCandidateTemplate() {
     }, null, 2)}\n`,
     "utf8"
   );
+
+  const policyPath = path.join(projectRoot, "topogram.template-policy.json");
+  const policy = JSON.parse(fs.readFileSync(policyPath, "utf8"));
+  policy.pinnedVersions = { ...(policy.pinnedVersions || {}), [projectConfig.template.id]: candidateVersion };
+  fs.writeFileSync(policyPath, `${JSON.stringify(policy, null, 2)}\n`, "utf8");
 }
 
 function runTopogram(args) {
