@@ -3,10 +3,9 @@ import childProcess from "node:child_process";
 
 const topogramBin = process.env.TOPOGRAM_BIN || "topogram";
 const result = childProcess.spawnSync(topogramBin, [
-  "generate",
+  "component",
+  "check",
   "./topogram",
-  "--generate",
-  "component-conformance-report",
   "--projection",
   "proj_ui_web",
   "--json"
