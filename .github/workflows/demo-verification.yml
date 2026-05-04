@@ -84,6 +84,8 @@ jobs:
         run: npm run check
       - name: Check component conformance
         run: npm run component:conformance
+      - name: Check component behavior
+        run: npm run component:behavior
       - name: Check template policy
         run: npm run template:policy:check
       - name: Check latest template status

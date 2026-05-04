@@ -13,6 +13,7 @@
     "check": "topogram check",
     "check:json": "topogram check --json",
     "component:conformance": "node ./scripts/verify-component-conformance.mjs",
+    "component:behavior": "node ./scripts/verify-component-behavior.mjs",
     "generate": "topogram generate",
     "verify": "npm run app:compile",
     "bootstrap": "npm run app:bootstrap",
