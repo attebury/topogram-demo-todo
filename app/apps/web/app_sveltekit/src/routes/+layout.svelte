@@ -1,7 +1,3 @@
-<script lang="ts">
-  export let data;
-</script>
-
 <svelte:head>
   <title>Topogram Todo</title>
 </svelte:head>
