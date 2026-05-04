@@ -14,17 +14,17 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.28",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.29",
       "source": "./topograms.catalog.json",
-      "version": "0.1.28"
+      "version": "0.1.29"
     },
     "id": "@attebury/topogram-template-todo",
     "includesExecutableImplementation": true,
-    "requested": "@attebury/topogram-template-todo@0.1.28",
+    "requested": "@attebury/topogram-template-todo@0.1.29",
     "source": "package",
     "sourceRoot": null,
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.28",
-    "version": "0.1.28"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.29",
+    "version": "0.1.29"
   },
   "topology": {
     "components": [

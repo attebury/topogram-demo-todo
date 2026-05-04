@@ -4,17 +4,17 @@
   "trustedAt": "2026-05-04T19:44:28.784Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
-    "version": "0.1.28",
+    "version": "0.1.29",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.28",
-    "requested": "@attebury/topogram-template-todo@0.1.28",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.29",
+    "requested": "@attebury/topogram-template-todo@0.1.29",
     "sourceRoot": null,
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.28",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.29",
       "source": "./topograms.catalog.json",
-      "version": "0.1.28"
+      "version": "0.1.29"
     }
   },
   "implementation": {

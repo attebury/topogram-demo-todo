@@ -39,5 +39,23 @@ assert.match(help.stdout, /topogram catalog show todo/);
 assert.match(help.stdout, /topogram source status/);
 assert.match(help.stdout, /topogram template list/);
 assert.match(help.stdout, /topogram template explain/);
+assert.match(help.stdout, /topogram query list/);
+assert.match(help.stdout, /topogram query component-behavior/);
 
-console.log("Topogram CLI exposes doctor, catalog, template, and source commands.");
+const queryList = childProcess.spawnSync(topogramBin, ["query", "list", "--json"], {
+  encoding: "utf8",
+  env: {
+    ...process.env,
+    PATH: process.env.PATH || ""
+  }
+});
+
+assert.equal(queryList.status, 0, queryList.stderr || queryList.stdout);
+const queryListPayload = JSON.parse(queryList.stdout);
+assert.equal(queryListPayload.type, "query_list");
+assert.equal(queryListPayload.queries.some((query) => query.name === "component-behavior"), true);
+
+const pkg = JSON.parse(fs.readFileSync("package.json", "utf8"));
+assert.equal(pkg.scripts["component:behavior:query"], "node ./scripts/verify-component-behavior-query.mjs");
+
+console.log("Topogram CLI exposes doctor, catalog, template, source, and query commands.");

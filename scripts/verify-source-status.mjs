@@ -19,14 +19,14 @@ const payload = JSON.parse(result.stdout);
 
 assert.equal(payload.project.catalog.id, "todo");
 assert.equal(payload.project.catalog.package, "@attebury/topogram-template-todo");
-assert.equal(payload.project.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.28");
+assert.equal(payload.project.catalog.packageSpec, "@attebury/topogram-template-todo@0.1.29");
 assert.equal(payload.project.template.id, "@attebury/topogram-template-todo");
 assert.equal(payload.project.template.source, "package");
-assert.equal(payload.project.template.sourceSpec, "@attebury/topogram-template-todo@0.1.28");
+assert.equal(payload.project.template.sourceSpec, "@attebury/topogram-template-todo@0.1.29");
 assert.equal(payload.project.package.package, "@attebury/topogram-template-todo");
-assert.equal(payload.project.package.packageSpec, "@attebury/topogram-template-todo@0.1.28");
+assert.equal(payload.project.package.packageSpec, "@attebury/topogram-template-todo@0.1.29");
 if (mode === "remote") {
-  assert.equal(payload.project.package.currentVersion, "0.1.28");
+  assert.equal(payload.project.package.currentVersion, "0.1.29");
   assert.equal(payload.project.packageChecks.mode, "remote");
   assert.equal(payload.project.packageChecks.skipped, false);
 } else {
