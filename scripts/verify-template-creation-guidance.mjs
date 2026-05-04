@@ -12,10 +12,6 @@ const env = {
   PATH: process.env.PATH || ""
 };
 
-if (process.env.TOPOGRAM_FAKE_TEMPLATE_PACKAGE_ROOT) {
-  env.PATH = `${createFakeNpm(root, process.env.TOPOGRAM_FAKE_TEMPLATE_PACKAGE_ROOT)}${path.delimiter}${env.PATH}`;
-}
-
 const result = childProcess.spawnSync(
   topogramBin,
   ["new", projectRoot, "--template", "todo", "--catalog", "./topograms.catalog.json"],
@@ -38,40 +34,3 @@ assert.equal(fs.existsSync(path.join(projectRoot, "topogram.template-policy.json
 assert.equal(fs.existsSync(path.join(projectRoot, "implementation", "index.js")), true);
 
 console.log("Template creation guidance describes catalog provenance and trust steps.");
-
-function createFakeNpm(rootDir, templatePackageRoot) {
-  const binDir = path.join(rootDir, "bin");
-  fs.mkdirSync(binDir, { recursive: true });
-  const npmPath = path.join(binDir, "npm");
-  fs.writeFileSync(npmPath, `#!/usr/bin/env node
-const fs = require("node:fs");
-const path = require("node:path");
-const args = process.argv.slice(2);
-function packageNameFromSpec(spec) {
-  if (spec.startsWith("@")) {
-    const [scope, rest] = spec.split("/");
-    const versionIndex = rest.indexOf("@");
-    return path.join(scope, versionIndex >= 0 ? rest.slice(0, versionIndex) : rest);
-  }
-  const versionIndex = spec.indexOf("@");
-  return versionIndex >= 0 ? spec.slice(0, versionIndex) : spec;
-}
-if (args[0] !== "install") {
-  process.stderr.write("Unexpected fake npm command: " + args.join(" ") + "\\n");
-  process.exit(1);
-}
-const prefixIndex = args.indexOf("--prefix");
-if (prefixIndex < 0) {
-  process.stderr.write("Fake npm only supports template package install with --prefix.\\n");
-  process.exit(1);
-}
-const prefix = args[prefixIndex + 1];
-const spec = args[args.length - 1];
-const target = path.join(prefix, "node_modules", packageNameFromSpec(spec));
-fs.mkdirSync(path.dirname(target), { recursive: true });
-fs.cpSync(${JSON.stringify(templatePackageRoot)}, target, { recursive: true });
-process.exit(0);
-`, "utf8");
-  fs.chmodSync(npmPath, 0o755);
-  return binDir;
-}

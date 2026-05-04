@@ -40,11 +40,19 @@ jobs:
           node-version: 24
           registry-url: https://npm.pkg.github.com
           scope: "@attebury"
+      - name: Verify default catalog-backed template creation
+        run: |
+          TOPOGRAM_CLI_VERSION="$(cat topogram-cli.version)"
+          npm exec --yes --package="@attebury/topogram@$TOPOGRAM_CLI_VERSION" -- topogram new "$RUNNER_TEMP/todo-from-default-catalog" --template todo
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Verify catalog-backed template creation
         run: |
           TOPOGRAM_CLI_VERSION="$(cat topogram-cli.version)"
           npm exec --yes --package="@attebury/topogram@$TOPOGRAM_CLI_VERSION" -- topogram new "$RUNNER_TEMP/todo-from-catalog" --template todo --catalog ./topograms.catalog.json
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install
         run: npm ci
