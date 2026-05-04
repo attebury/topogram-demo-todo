@@ -39,7 +39,7 @@ const humanList = childProcess.spawnSync(
 assert.equal(humanList.status, 0, humanList.stderr || humanList.stdout);
 assert.match(humanList.stdout, /Template starters:/);
 assert.match(humanList.stdout, /Catalog aliases resolve to versioned package installs/);
-assert.match(humanList.stdout, /todo@0\.1\.27/);
+assert.match(humanList.stdout, /todo@0\.1\.28/);
 assert.match(humanList.stdout, /Source: catalog \| Surfaces: web, api, database \| Stack: SvelteKit \+ Hono \+ Postgres \| Executable implementation: yes/);
 assert.match(humanList.stdout, /topogram new \.\/my-app --template todo/);
 
