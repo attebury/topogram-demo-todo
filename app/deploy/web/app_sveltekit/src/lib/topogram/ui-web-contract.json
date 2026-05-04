@@ -109,7 +109,7 @@
           "kind": "optimistic_update",
           "directives": {
             "actions": [
-              "card_move"
+              "cap_update_task"
             ],
             "rollback": true
           },
@@ -375,7 +375,7 @@
           "kind": "bulk_action",
           "directives": {
             "actions": [
-              "export_request"
+              "cap_export_tasks"
             ],
             "state": "selected_ids",
             "emits": "export_request"
@@ -1619,7 +1619,7 @@
               "source": "structured",
               "directives": {
                 "actions": [
-                  "export_request"
+                  "cap_export_tasks"
                 ],
                 "state": "selected_ids",
                 "emits": "export_request"
@@ -1659,7 +1659,11 @@
               ],
               "actions": [
                 {
-                  "event": "export_request",
+                  "event": null,
+                  "capability": {
+                    "id": "cap_export_tasks",
+                    "kind": "capability"
+                  },
                   "bound": true,
                   "bindings": [
                     {
@@ -1953,7 +1957,7 @@
               "source": "structured",
               "directives": {
                 "actions": [
-                  "card_move"
+                  "cap_update_task"
                 ],
                 "rollback": true
               },
@@ -1961,7 +1965,11 @@
               "emits": [],
               "actions": [
                 {
-                  "event": "card_move",
+                  "event": null,
+                  "capability": {
+                    "id": "cap_update_task",
+                    "kind": "capability"
+                  },
                   "bound": true,
                   "bindings": [
                     {
