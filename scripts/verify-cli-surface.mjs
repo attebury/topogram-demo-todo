@@ -40,6 +40,7 @@ assert.match(help.stdout, /topogram source status/);
 assert.match(help.stdout, /topogram template list/);
 assert.match(help.stdout, /topogram template explain/);
 assert.match(help.stdout, /topogram query list/);
+assert.match(help.stdout, /topogram query show/);
 assert.match(help.stdout, /topogram query component-behavior/);
 
 const queryList = childProcess.spawnSync(topogramBin, ["query", "list", "--json"], {
@@ -55,7 +56,23 @@ const queryListPayload = JSON.parse(queryList.stdout);
 assert.equal(queryListPayload.type, "query_list");
 assert.equal(queryListPayload.queries.some((query) => query.name === "component-behavior"), true);
 
+const queryShow = childProcess.spawnSync(topogramBin, ["query", "show", "component-behavior", "--json"], {
+  encoding: "utf8",
+  env: {
+    ...process.env,
+    PATH: process.env.PATH || ""
+  }
+});
+
+assert.equal(queryShow.status, 0, queryShow.stderr || queryShow.stdout);
+const queryShowPayload = JSON.parse(queryShow.stdout);
+assert.equal(queryShowPayload.type, "query_definition");
+assert.equal(queryShowPayload.query.name, "component-behavior");
+assert.equal(queryShowPayload.query.output, "component_behavior_report");
+
 const pkg = JSON.parse(fs.readFileSync("package.json", "utf8"));
+assert.equal(pkg.scripts["query:list"], "topogram query list --json");
+assert.equal(pkg.scripts["query:show"], "topogram query show");
 assert.equal(pkg.scripts["component:behavior:query"], "node ./scripts/verify-component-behavior-query.mjs");
 
 console.log("Topogram CLI exposes doctor, catalog, template, source, and query commands.");
