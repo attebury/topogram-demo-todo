@@ -12,7 +12,11 @@ export function createServer() {
     ready: async () => {
       await prisma.$queryRaw`SELECT 1`;
     },
-    authorize: async (ctx, authz, authorizationContext) => {
+    authorize: async (
+      ctx: Parameters<typeof authorizeWithGeneratedAuthProfile>[0],
+      authz: Parameters<typeof authorizeWithGeneratedAuthProfile>[1],
+      authorizationContext: Parameters<typeof authorizeWithGeneratedAuthProfile>[2]
+    ) => {
       await authorizeWithGeneratedAuthProfile(ctx, authz, authorizationContext);
     }
   });
@@ -21,9 +25,5 @@ export function createServer() {
 const app = createServer();
 const port = Number(process.env.PORT || 3000);
 
-serve({
-  fetch: app.fetch,
-  port
-});
-
+serve({ fetch: app.fetch, port });
 console.log(`topogram-todo-server listening on http://localhost:${port}`);

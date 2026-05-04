@@ -21,7 +21,7 @@ const todo = payload.templates.find((template) => template.id === "todo");
 assert.ok(todo, "expected template list to include catalog template id 'todo'");
 assert.equal(todo.source, "catalog");
 assert.equal(todo.package, "@attebury/topogram-template-todo");
-assert.equal(todo.defaultVersion, "0.1.13");
+assert.equal(todo.defaultVersion, "0.1.26");
 assert.equal(todo.includesExecutableImplementation, true);
 
 const humanList = childProcess.spawnSync(
@@ -39,7 +39,7 @@ const humanList = childProcess.spawnSync(
 assert.equal(humanList.status, 0, humanList.stderr || humanList.stdout);
 assert.match(humanList.stdout, /Template starters:/);
 assert.match(humanList.stdout, /Catalog aliases resolve to versioned package installs/);
-assert.match(humanList.stdout, /todo@0\.1\.13/);
+assert.match(humanList.stdout, /todo@0\.1\.26/);
 assert.match(humanList.stdout, /Source: catalog \| Surfaces: web, api, database \| Stack: SvelteKit \+ Hono \+ Postgres \| Executable implementation: yes/);
 assert.match(humanList.stdout, /topogram new \.\/my-app --template todo/);
 
@@ -60,7 +60,7 @@ const show = childProcess.spawnSync(
 assert.equal(show.status, 0, show.stderr || show.stdout);
 const showPayload = JSON.parse(show.stdout);
 assert.equal(showPayload.entry.kind, "template");
-assert.equal(showPayload.packageSpec, "@attebury/topogram-template-todo@0.1.13");
+assert.equal(showPayload.packageSpec, "@attebury/topogram-template-todo@0.1.26");
 assert.equal(
   showPayload.commands.primary,
   "topogram new ./my-app --template todo --catalog ./topograms.catalog.json"

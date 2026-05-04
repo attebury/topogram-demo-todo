@@ -1,7 +1,7 @@
 {
   "type": "generation_coverage",
   "surface": "web",
-  "generator": "topogram/sveltekit",
+  "generator": "@attebury/topogram-generator-sveltekit-web",
   "projection": {
     "id": "proj_ui_web",
     "name": "Todo Web UI",
@@ -10,10 +10,10 @@
   "summary": {
     "routed_screens": 15,
     "rendered_screens": 15,
-    "implementation_screens": 13,
-    "generator_screens": 2,
-    "component_usages": 4,
-    "rendered_component_usages": 4,
+    "implementation_screens": 0,
+    "generator_screens": 15,
+    "component_usages": 0,
+    "rendered_component_usages": 0,
     "diagnostics": 0,
     "errors": 0,
     "warnings": 0
@@ -24,7 +24,7 @@
       "route": "/projects",
       "page": "src/routes/projects/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -32,7 +32,7 @@
       "route": "/projects/:id",
       "page": "src/routes/projects/[id]/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -40,7 +40,7 @@
       "route": "/projects/new",
       "page": "src/routes/projects/new/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -48,7 +48,7 @@
       "route": "/projects/:id/edit",
       "page": "src/routes/projects/[id]/edit/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -56,7 +56,7 @@
       "route": "/users",
       "page": "src/routes/users/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -64,7 +64,7 @@
       "route": "/users/:id",
       "page": "src/routes/users/[id]/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -72,7 +72,7 @@
       "route": "/users/new",
       "page": "src/routes/users/new/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -80,7 +80,7 @@
       "route": "/users/:id/edit",
       "page": "src/routes/users/[id]/edit/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -88,21 +88,8 @@
       "route": "/tasks",
       "page": "src/routes/tasks/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
-      "component_usages": [
-        {
-          "component": "component_ui_task_summary",
-          "region": "hero",
-          "rendered": true,
-          "marker": "data-topogram-component=\"component_ui_task_summary\""
-        },
-        {
-          "component": "component_ui_task_table",
-          "region": "results",
-          "rendered": true,
-          "marker": "data-topogram-component=\"component_ui_task_table\""
-        }
-      ]
+      "renderer": "generator",
+      "component_usages": []
     },
     {
       "id": "task_board",
@@ -110,14 +97,7 @@
       "page": "src/routes/tasks/board/+page.svelte",
       "rendered": true,
       "renderer": "generator",
-      "component_usages": [
-        {
-          "component": "component_ui_task_board",
-          "region": "results",
-          "rendered": true,
-          "marker": "data-topogram-component=\"component_ui_task_board\""
-        }
-      ]
+      "component_usages": []
     },
     {
       "id": "task_calendar",
@@ -125,21 +105,14 @@
       "page": "src/routes/tasks/calendar/+page.svelte",
       "rendered": true,
       "renderer": "generator",
-      "component_usages": [
-        {
-          "component": "component_ui_task_calendar",
-          "region": "results",
-          "rendered": true,
-          "marker": "data-topogram-component=\"component_ui_task_calendar\""
-        }
-      ]
+      "component_usages": []
     },
     {
       "id": "task_detail",
       "route": "/tasks/:id",
       "page": "src/routes/tasks/[id]/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -147,7 +120,7 @@
       "route": "/tasks/new",
       "page": "src/routes/tasks/new/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -155,7 +128,7 @@
       "route": "/tasks/:id/edit",
       "page": "src/routes/tasks/[id]/edit/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     },
     {
@@ -163,7 +136,7 @@
       "route": "/task-exports/:job_id",
       "page": "src/routes/task-exports/[job_id]/+page.svelte",
       "rendered": true,
-      "renderer": "implementation",
+      "renderer": "generator",
       "component_usages": []
     }
   ],

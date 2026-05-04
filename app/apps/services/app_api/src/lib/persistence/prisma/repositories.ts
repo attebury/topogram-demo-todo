@@ -1,46 +1,47 @@
 import { PrismaClient } from "@prisma/client";
 import type { TodoRepository } from "../repositories";
 import type {
-  GetProjectInput,
-  GetProjectResult,
-  ListProjectsInput,
-  ListProjectsResult,
-  CreateProjectInput,
-  CreateProjectResult,
-  UpdateProjectInput,
-  UpdateProjectResult,
-  GetUserInput,
-  GetUserResult,
-  ListUsersInput,
-  ListUsersResult,
-  CreateUserInput,
-  CreateUserResult,
-  UpdateUserInput,
-  UpdateUserResult,
-  GetTaskInput,
-  GetTaskResult,
-  ListTasksInput,
-  ListTasksResult,
-  CreateTaskInput,
-  CreateTaskResult,
-  UpdateTaskInput,
-  UpdateTaskResult,
   CompleteTaskInput,
   CompleteTaskResult,
+  CreateProjectInput,
+  CreateProjectResult,
+  CreateTaskInput,
+  CreateTaskResult,
+  CreateUserInput,
+  CreateUserResult,
   DeleteTaskInput,
   DeleteTaskResult,
-  ExportTasksInput,
-  ExportTasksResult,
-  GetTaskExportJobInput,
-  GetTaskExportJobResult,
   DownloadTaskExportInput,
   DownloadTaskExportResult,
+  ExportTasksInput,
+  ExportTasksResult,
+  GetProjectInput,
+  GetProjectResult,
+  GetTaskExportJobInput,
+  GetTaskExportJobResult,
+  GetTaskInput,
+  GetTaskResult,
+  GetUserInput,
+  GetUserResult,
+  ListProjectsInput,
+  ListProjectsResult,
+  ListTasksInput,
+  ListTasksResult,
+  ListUsersInput,
+  ListUsersResult,
+  LookupOption,
   MarkExportJobCompletedInput,
   MarkExportJobCompletedResult,
-  LookupOption,
+  UpdateProjectInput,
+  UpdateProjectResult,
+  UpdateTaskInput,
+  UpdateTaskResult,
+  UpdateUserInput,
+  UpdateUserResult,
 } from "../types";
 
 import { HttpError } from "../../server/helpers";
+
 
 type StoredExportJob = GetTaskExportJobResult & {
   archive: Uint8Array;
@@ -131,7 +132,7 @@ export class PrismaTodoRepository implements TodoRepository {
       where: { status: { not: "archived" } },
       orderBy: [{ name: "asc" }]
     });
-    return projects.map((project) => ({ value: project.id, label: project.name }));
+    return projects.map((project: any) => ({ value: project.id, label: project.name }));
   }
 
   async listUserOptions(): Promise<LookupOption[]> {
@@ -139,7 +140,7 @@ export class PrismaTodoRepository implements TodoRepository {
       where: { is_active: true },
       orderBy: [{ display_name: "asc" }]
     });
-    return users.map((user) => ({ value: user.id, label: user.display_name }));
+    return users.map((user: any) => ({ value: user.id, label: user.display_name }));
   }
 
   async getProject(input: GetProjectInput): Promise<GetProjectResult> {
@@ -177,7 +178,7 @@ export class PrismaTodoRepository implements TodoRepository {
         owner_id: input.owner_id ?? null,
         created_at: now
       }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       if (isUniqueConstraintError(error)) {
         throw new HttpError(409, "cap_create_project_conflict", "Project name already exists");
       }
@@ -199,7 +200,7 @@ export class PrismaTodoRepository implements TodoRepository {
         ...(input.status !== undefined ? { status: input.status } : {}),
         ...(input.owner_id !== undefined ? { owner_id: input.owner_id ?? null } : {})
       }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       if (isUniqueConstraintError(error)) {
         throw new HttpError(409, "cap_update_project_conflict", "Project name already exists");
       }
@@ -238,7 +239,7 @@ export class PrismaTodoRepository implements TodoRepository {
         is_active: input.is_active ?? true,
         created_at: now
       }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       if (isUniqueConstraintError(error)) {
         throw new HttpError(409, "cap_create_user_conflict", "User email already exists");
       }
@@ -255,7 +256,7 @@ export class PrismaTodoRepository implements TodoRepository {
         ...(input.display_name !== undefined ? { display_name: input.display_name } : {}),
         ...(input.is_active !== undefined ? { is_active: input.is_active } : {})
       }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       if (isUniqueConstraintError(error)) {
         throw new HttpError(409, "cap_update_user_conflict", "User email already exists");
       }
@@ -332,7 +333,7 @@ export class PrismaTodoRepository implements TodoRepository {
         ...(input.status !== undefined ? { status: input.status } : {}),
         updated_at: new Date()
       }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       throw new HttpError(404, "task_not_found", error instanceof Error ? error.message : "Task not found");
     });
     return mapTaskRecord(task);
@@ -343,7 +344,7 @@ export class PrismaTodoRepository implements TodoRepository {
     const task = await this.prisma.task.update({
       where: { id: input.task_id },
       data: { status: "completed", completed_at: completedAt, updated_at: new Date() }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       throw new HttpError(404, "task_not_found", error instanceof Error ? error.message : "Task not found");
     });
     return mapTaskRecord(task);
@@ -353,7 +354,7 @@ export class PrismaTodoRepository implements TodoRepository {
     const task = await this.prisma.task.update({
       where: { id: input.task_id },
       data: { status: "archived", updated_at: new Date() }
-    }).catch((error) => {
+    }).catch((error: unknown) => {
       throw new HttpError(404, "cap_delete_task_not_found", error instanceof Error ? error.message : "Task not found");
     });
     return mapTaskRecord(task);

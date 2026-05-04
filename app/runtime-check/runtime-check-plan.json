@@ -13,8 +13,9 @@
         "type": "api",
         "projection": "proj_api",
         "generator": {
-          "id": "topogram/hono",
-          "version": "1"
+          "id": "@attebury/topogram-generator-hono-api",
+          "version": "1",
+          "package": "@attebury/topogram-generator-hono-api"
         }
       },
       {
@@ -22,8 +23,9 @@
         "type": "web",
         "projection": "proj_ui_web",
         "generator": {
-          "id": "topogram/sveltekit",
-          "version": "1"
+          "id": "@attebury/topogram-generator-sveltekit-web",
+          "version": "1",
+          "package": "@attebury/topogram-generator-sveltekit-web"
         }
       },
       {
@@ -31,8 +33,9 @@
         "type": "database",
         "projection": "proj_db_postgres",
         "generator": {
-          "id": "topogram/postgres",
-          "version": "1"
+          "id": "@attebury/topogram-generator-postgres-db",
+          "version": "1",
+          "package": "@attebury/topogram-generator-postgres-db"
         }
       }
     ]

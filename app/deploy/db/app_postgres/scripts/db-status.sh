@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
-. "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/db-common.sh"
 
-generate_desired_snapshot
-
-if [[ -f "$CURRENT_SNAPSHOT" ]]; then
-  generate_migration_plan "$CURRENT_SNAPSHOT"
-  cat "$PLAN_JSON"
-else
-  echo '{"mode":"greenfield","currentSnapshot":null}'
-fi
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/db-common.sh"
+echo "Postgres lifecycle files:"
+for file in schema.sql migrations/0001_init.sql prisma/schema.prisma lifecycle.plan.json state/desired.snapshot.json; do
+  if [[ -f "$DB_DIR/$file" ]]; then
+    echo "- $file"
+  else
+    echo "- missing: $file"
+  fi
+done

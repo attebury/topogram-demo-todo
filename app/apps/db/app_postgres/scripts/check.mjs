@@ -1,0 +1,1 @@
+import fs from 'node:fs'; for (const file of ['schema.sql', 'migrations/0001_init.sql', 'prisma/schema.prisma', 'drizzle/schema.ts', 'lifecycle.plan.json']) { if (!fs.existsSync(file)) throw new Error(`missing ${file}`); } console.log('Checked Postgres database lifecycle bundle.');

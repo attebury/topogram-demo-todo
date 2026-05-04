@@ -39,22 +39,23 @@ import type {
 } from "./types";
 
 export interface TodoRepository {
-  getProject(input: GetProjectInput): Promise<GetProjectResult>;
-  listProjects(input: ListProjectsInput): Promise<ListProjectsResult>;
-  createProject(input: CreateProjectInput): Promise<CreateProjectResult>;
-  updateProject(input: UpdateProjectInput): Promise<UpdateProjectResult>;
-  getUser(input: GetUserInput): Promise<GetUserResult>;
-  listUsers(input: ListUsersInput): Promise<ListUsersResult>;
-  createUser(input: CreateUserInput): Promise<CreateUserResult>;
-  updateUser(input: UpdateUserInput): Promise<UpdateUserResult>;
-  getTask(input: GetTaskInput): Promise<GetTaskResult>;
-  listTasks(input: ListTasksInput): Promise<ListTasksResult>;
   createTask(input: CreateTaskInput): Promise<CreateTaskResult>;
+  getTask(input: GetTaskInput): Promise<GetTaskResult>;
   updateTask(input: UpdateTaskInput): Promise<UpdateTaskResult>;
   completeTask(input: CompleteTaskInput): Promise<CompleteTaskResult>;
+  listTasks(input: ListTasksInput): Promise<ListTasksResult>;
   deleteTask(input: DeleteTaskInput): Promise<DeleteTaskResult>;
   exportTasks(input: ExportTasksInput): Promise<ExportTasksResult>;
   getTaskExportJob(input: GetTaskExportJobInput): Promise<GetTaskExportJobResult>;
+  downloadTaskExport(input: DownloadTaskExportInput): Promise<DownloadTaskExportResult>;
+  listProjects(input: ListProjectsInput): Promise<ListProjectsResult>;
+  getProject(input: GetProjectInput): Promise<GetProjectResult>;
+  createProject(input: CreateProjectInput): Promise<CreateProjectResult>;
+  updateProject(input: UpdateProjectInput): Promise<UpdateProjectResult>;
+  listUsers(input: ListUsersInput): Promise<ListUsersResult>;
+  getUser(input: GetUserInput): Promise<GetUserResult>;
+  createUser(input: CreateUserInput): Promise<CreateUserResult>;
+  updateUser(input: UpdateUserInput): Promise<UpdateUserResult>;
   listProjectOptions(): Promise<LookupOption[]>;
   listUserOptions(): Promise<LookupOption[]>;
   downloadTaskExport(input: DownloadTaskExportInput): Promise<DownloadTaskExportResult>;

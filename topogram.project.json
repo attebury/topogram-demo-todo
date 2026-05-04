@@ -14,25 +14,26 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.13",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.26",
       "source": "./topograms.catalog.json",
-      "version": "0.1.13"
+      "version": "0.1.26"
     },
     "id": "@attebury/topogram-template-todo",
     "includesExecutableImplementation": true,
-    "requested": "@attebury/topogram-template-todo@0.1.13",
+    "requested": "@attebury/topogram-template-todo@0.1.26",
     "source": "package",
     "sourceRoot": null,
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.13",
-    "version": "0.1.13"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.26",
+    "version": "0.1.26"
   },
   "topology": {
     "components": [
       {
         "database": "app_postgres",
         "generator": {
-          "id": "topogram/hono",
-          "version": "1"
+          "id": "@attebury/topogram-generator-hono-api",
+          "version": "1",
+          "package": "@attebury/topogram-generator-hono-api"
         },
         "id": "app_api",
         "port": 3000,
@@ -42,8 +43,9 @@
       {
         "api": "app_api",
         "generator": {
-          "id": "topogram/sveltekit",
-          "version": "1"
+          "id": "@attebury/topogram-generator-sveltekit-web",
+          "version": "1",
+          "package": "@attebury/topogram-generator-sveltekit-web"
         },
         "id": "app_sveltekit",
         "port": 5173,
@@ -52,8 +54,9 @@
       },
       {
         "generator": {
-          "id": "topogram/postgres",
-          "version": "1"
+          "id": "@attebury/topogram-generator-postgres-db",
+          "version": "1",
+          "package": "@attebury/topogram-generator-postgres-db"
         },
         "id": "app_postgres",
         "port": 5432,

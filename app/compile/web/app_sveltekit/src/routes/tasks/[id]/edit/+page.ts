@@ -5,7 +5,7 @@ import { listLookupOptions } from "$lib/api/lookups";
 export const load: PageLoad = async ({ fetch, params }) => {
   const [task, ownerOptions] = await Promise.all([
     getTask(fetch, params.id),
-    listLookupOptions(fetch, "/lookups/users")
+    listLookupOptions(fetch, "/lookups/user")
   ]);
   return {
     screen: {

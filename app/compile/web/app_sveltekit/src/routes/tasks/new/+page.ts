@@ -3,8 +3,8 @@ import { listLookupOptions } from "$lib/api/lookups";
 
 export const load: PageLoad = async ({ fetch }) => {
   const [projectOptions, ownerOptions] = await Promise.all([
-    listLookupOptions(fetch, "/lookups/projects"),
-    listLookupOptions(fetch, "/lookups/users")
+    listLookupOptions(fetch, "/lookups/project"),
+    listLookupOptions(fetch, "/lookups/user")
   ]);
 
   return {

@@ -12,8 +12,8 @@ export const load: PageLoad = async ({ fetch, url }) => {
       after: url.searchParams.get("after") ?? undefined,
       limit: limit ? Number(limit) : undefined
     }),
-    listLookupOptions(fetch, "/lookups/projects"),
-    listLookupOptions(fetch, "/lookups/users")
+    listLookupOptions(fetch, "/lookups/project"),
+    listLookupOptions(fetch, "/lookups/user")
   ]);
   return {
     screen: {

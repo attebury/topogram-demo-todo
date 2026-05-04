@@ -5,7 +5,7 @@
       "id": "todo",
       "kind": "template",
       "package": "@attebury/topogram-template-todo",
-      "defaultVersion": "0.1.13",
+      "defaultVersion": "0.1.26",
       "description": "Todo app starter for the external Topogram demo.",
       "tags": [
         "todo",
@@ -25,9 +25,9 @@
         "database"
       ],
       "generators": [
-        "topogram/sveltekit",
-        "topogram/hono",
-        "topogram/postgres"
+        "@attebury/topogram-generator-sveltekit-web",
+        "@attebury/topogram-generator-hono-api",
+        "@attebury/topogram-generator-postgres-db"
       ],
       "stack": "SvelteKit + Hono + Postgres"
     }
