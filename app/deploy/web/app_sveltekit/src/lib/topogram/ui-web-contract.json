@@ -1410,7 +1410,31 @@
               }
             }
           ],
-          "eventBindings": []
+          "eventBindings": [],
+          "behaviorRealizations": [
+            {
+              "kind": "realtime_update",
+              "source": "structured",
+              "directives": {
+                "source": "cap_list_tasks",
+                "merge": "replace"
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "metrics",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            }
+          ]
         },
         {
           "type": "ui_component_usage",
@@ -1446,6 +1470,239 @@
                 "id": "cap_export_tasks",
                 "kind": "capability"
               }
+            }
+          ],
+          "behaviorRealizations": [
+            {
+              "kind": "selection",
+              "source": "structured",
+              "directives": {
+                "mode": "multi",
+                "state": "selected_ids",
+                "emits": "row_select"
+              },
+              "state": {
+                "prop": "selected_ids",
+                "requiredness": "optional",
+                "bound": false,
+                "source": null,
+                "defaultValue": []
+              },
+              "emits": [
+                {
+                  "event": "row_select",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "row_select",
+                      "action": "navigate",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "navigation",
+                      "event": "row_select",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [
+                {
+                  "type": "navigation",
+                  "event": "row_select",
+                  "target": {
+                    "id": "task_detail",
+                    "kind": "screen"
+                  }
+                }
+              ],
+              "status": "realized"
+            },
+            {
+              "kind": "sorting",
+              "source": "structured",
+              "directives": {
+                "fields": [
+                  "title",
+                  "status",
+                  "priority",
+                  "dueAt",
+                  "created_at"
+                ],
+                "default": [
+                  "created_at",
+                  "desc"
+                ]
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            },
+            {
+              "kind": "filtering",
+              "source": "structured",
+              "directives": {
+                "fields": [
+                  "project_id",
+                  "owner_id",
+                  "status"
+                ]
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            },
+            {
+              "kind": "pagination",
+              "source": "structured",
+              "directives": {
+                "mode": "cursor",
+                "page_size": 25
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            },
+            {
+              "kind": "bulk_action",
+              "source": "structured",
+              "directives": {
+                "actions": [
+                  "export_request"
+                ],
+                "state": "selected_ids",
+                "emits": "export_request"
+              },
+              "state": {
+                "prop": "selected_ids",
+                "requiredness": "optional",
+                "bound": false,
+                "source": null,
+                "defaultValue": []
+              },
+              "emits": [
+                {
+                  "event": "export_request",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "export_request",
+                      "action": "action",
+                      "target": {
+                        "id": "cap_export_tasks",
+                        "kind": "capability"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "command",
+                      "event": "export_request",
+                      "capability": {
+                        "id": "cap_export_tasks",
+                        "kind": "capability"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "event": "export_request",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "export_request",
+                      "action": "action",
+                      "target": {
+                        "id": "cap_export_tasks",
+                        "kind": "capability"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "command",
+                      "event": "export_request",
+                      "capability": {
+                        "id": "cap_export_tasks",
+                        "kind": "capability"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "dataDependencies": [
+                {
+                  "prop": "rows",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [
+                {
+                  "type": "command",
+                  "event": "export_request",
+                  "capability": {
+                    "id": "cap_export_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "status": "realized"
             }
           ]
         }
@@ -1581,6 +1838,174 @@
                 "kind": "capability"
               }
             }
+          ],
+          "behaviorRealizations": [
+            {
+              "kind": "selection",
+              "source": "structured",
+              "directives": {
+                "mode": "single",
+                "state": "selected_id",
+                "emits": "card_select"
+              },
+              "state": {
+                "prop": "selected_id",
+                "requiredness": "optional",
+                "bound": false,
+                "source": null,
+                "defaultValue": null
+              },
+              "emits": [
+                {
+                  "event": "card_select",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "card_select",
+                      "action": "navigate",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "navigation",
+                      "event": "card_select",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "columns",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [
+                {
+                  "type": "navigation",
+                  "event": "card_select",
+                  "target": {
+                    "id": "task_detail",
+                    "kind": "screen"
+                  }
+                }
+              ],
+              "status": "realized"
+            },
+            {
+              "kind": "grouping",
+              "source": "structured",
+              "directives": {
+                "fields": [
+                  "status"
+                ]
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "columns",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            },
+            {
+              "kind": "drag_drop",
+              "source": "structured",
+              "directives": {
+                "axis": "horizontal",
+                "reorder": true
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "columns",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
+            },
+            {
+              "kind": "optimistic_update",
+              "source": "structured",
+              "directives": {
+                "actions": [
+                  "card_move"
+                ],
+                "rollback": true
+              },
+              "state": null,
+              "emits": [],
+              "actions": [
+                {
+                  "event": "card_move",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "card_move",
+                      "action": "action",
+                      "target": {
+                        "id": "cap_update_task",
+                        "kind": "capability"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "command",
+                      "event": "card_move",
+                      "capability": {
+                        "id": "cap_update_task",
+                        "kind": "capability"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "dataDependencies": [
+                {
+                  "prop": "columns",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [
+                {
+                  "type": "command",
+                  "event": "card_move",
+                  "capability": {
+                    "id": "cap_update_task",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "status": "realized"
+            }
           ]
         }
       ],
@@ -1703,6 +2128,95 @@
                 "id": "task_detail",
                 "kind": "screen"
               }
+            }
+          ],
+          "behaviorRealizations": [
+            {
+              "kind": "selection",
+              "source": "structured",
+              "directives": {
+                "mode": "single",
+                "state": "selected_id",
+                "emits": "event_select"
+              },
+              "state": {
+                "prop": "selected_id",
+                "requiredness": "optional",
+                "bound": false,
+                "source": null,
+                "defaultValue": null
+              },
+              "emits": [
+                {
+                  "event": "event_select",
+                  "bound": true,
+                  "bindings": [
+                    {
+                      "event": "event_select",
+                      "action": "navigate",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "type": "navigation",
+                      "event": "event_select",
+                      "target": {
+                        "id": "task_detail",
+                        "kind": "screen"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "events",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [
+                {
+                  "type": "navigation",
+                  "event": "event_select",
+                  "target": {
+                    "id": "task_detail",
+                    "kind": "screen"
+                  }
+                }
+              ],
+              "status": "realized"
+            },
+            {
+              "kind": "filtering",
+              "source": "structured",
+              "directives": {
+                "fields": [
+                  "status",
+                  "ownerId"
+                ]
+              },
+              "state": null,
+              "emits": [],
+              "actions": [],
+              "dataDependencies": [
+                {
+                  "prop": "events",
+                  "source": {
+                    "id": "cap_list_tasks",
+                    "kind": "capability"
+                  }
+                }
+              ],
+              "effects": [],
+              "status": "realized"
             }
           ]
         }
