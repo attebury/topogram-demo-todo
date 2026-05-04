@@ -22,7 +22,7 @@ assert.equal(payload.catalog.reachable, true);
 assert.equal(payload.catalog.entries, 1);
 const todo = payload.packages.find((item) => item.id === "todo");
 assert.ok(todo, "expected catalog doctor to check todo package");
-assert.equal(todo.packageSpec, "@attebury/topogram-template-todo@0.1.27");
+assert.equal(todo.packageSpec, "@attebury/topogram-template-todo@0.1.28");
 assert.equal(todo.ok, true);
 
 console.log("Catalog doctor verifies todo package access.");

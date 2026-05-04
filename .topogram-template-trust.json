@@ -1,20 +1,20 @@
 {
   "version": "1",
   "trustPolicy": "topogram-template-executable-implementation-v1",
-  "trustedAt": "2026-05-04T14:26:56.491Z",
+  "trustedAt": "2026-05-04T19:44:28.784Z",
   "template": {
     "id": "@attebury/topogram-template-todo",
-    "version": "0.1.27",
+    "version": "0.1.28",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.27",
-    "requested": "@attebury/topogram-template-todo@0.1.27",
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.28",
+    "requested": "@attebury/topogram-template-todo@0.1.28",
     "sourceRoot": null,
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.27",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.28",
       "source": "./topograms.catalog.json",
-      "version": "0.1.27"
+      "version": "0.1.28"
     }
   },
   "implementation": {

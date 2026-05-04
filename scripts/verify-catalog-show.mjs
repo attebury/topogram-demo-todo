@@ -21,7 +21,7 @@ assert.equal(payload.ok, true);
 assert.equal(payload.source, "./topograms.catalog.json");
 assert.equal(payload.entry.id, "todo");
 assert.equal(payload.entry.kind, "template");
-assert.equal(payload.packageSpec, "@attebury/topogram-template-todo@0.1.27");
+assert.equal(payload.packageSpec, "@attebury/topogram-template-todo@0.1.28");
 assert.equal(payload.entry.trust.includesExecutableImplementation, true);
 assert.equal(
   payload.commands.primary,

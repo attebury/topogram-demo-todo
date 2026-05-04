@@ -57,7 +57,7 @@
     },
     {
       "path": "topogram.project.json",
-      "sha256": "c6140c83e9c1dd3f27c81feac19af4855e54e886de52114aa89419bb2d59dfed",
+      "sha256": "cab840b394147d5127b056a43d919614db4d64a5c4db98bdbc12a551c0001a43",
       "size": 1844
     },
     {
@@ -152,8 +152,8 @@
     },
     {
       "path": "topogram/components/component-ui-task-board.tg",
-      "sha256": "dc6e52f93ae3803b4830be9adcd2065eabecd981c34a8aca2b27011ded3d9f6a",
-      "size": 822
+      "sha256": "2ae9973c7bfa9b38048b79fed0026ddf6bc2b71cc7dad7a4ad42f92b751502d5",
+      "size": 828
     },
     {
       "path": "topogram/components/component-ui-task-calendar.tg",
@@ -167,8 +167,8 @@
     },
     {
       "path": "topogram/components/component-ui-task-table.tg",
-      "sha256": "91e0c2de152ed50ef2e345fd6d6165d75f558b90ffee821b5540092564366fc2",
-      "size": 1025
+      "sha256": "8c425833c68c0de5de5c174fae18ada8eb0c4da991af80efcde4bc7edd6e000c",
+      "size": 1027
     },
     {
       "path": "topogram/decisions/decision-task-ownership.tg",
@@ -415,15 +415,15 @@
     "catalog": {
       "id": "todo",
       "package": "@attebury/topogram-template-todo",
-      "packageSpec": "@attebury/topogram-template-todo@0.1.27",
+      "packageSpec": "@attebury/topogram-template-todo@0.1.28",
       "source": "./topograms.catalog.json",
-      "version": "0.1.27"
+      "version": "0.1.28"
     },
     "id": "@attebury/topogram-template-todo",
-    "requested": "@attebury/topogram-template-todo@0.1.27",
+    "requested": "@attebury/topogram-template-todo@0.1.28",
     "source": "package",
-    "sourceSpec": "@attebury/topogram-template-todo@0.1.27",
-    "version": "0.1.27"
+    "sourceSpec": "@attebury/topogram-template-todo@0.1.28",
+    "version": "0.1.28"
   },
   "version": "0.1"
 }
