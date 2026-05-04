@@ -5,7 +5,7 @@
       "id": "todo",
       "kind": "template",
       "package": "@attebury/topogram-template-todo",
-      "defaultVersion": "0.1.11",
+      "defaultVersion": "0.1.13",
       "description": "Todo app starter for the external Topogram demo.",
       "tags": [
         "todo",

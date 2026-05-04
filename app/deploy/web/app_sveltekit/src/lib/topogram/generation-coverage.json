@@ -1,0 +1,171 @@
+{
+  "type": "generation_coverage",
+  "surface": "web",
+  "generator": "topogram/sveltekit",
+  "projection": {
+    "id": "proj_ui_web",
+    "name": "Todo Web UI",
+    "platform": "ui_web"
+  },
+  "summary": {
+    "routed_screens": 15,
+    "rendered_screens": 15,
+    "implementation_screens": 13,
+    "generator_screens": 2,
+    "component_usages": 4,
+    "rendered_component_usages": 4,
+    "diagnostics": 0,
+    "errors": 0,
+    "warnings": 0
+  },
+  "screens": [
+    {
+      "id": "project_list",
+      "route": "/projects",
+      "page": "src/routes/projects/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "project_detail",
+      "route": "/projects/:id",
+      "page": "src/routes/projects/[id]/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "project_create",
+      "route": "/projects/new",
+      "page": "src/routes/projects/new/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "project_edit",
+      "route": "/projects/:id/edit",
+      "page": "src/routes/projects/[id]/edit/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "user_list",
+      "route": "/users",
+      "page": "src/routes/users/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "user_detail",
+      "route": "/users/:id",
+      "page": "src/routes/users/[id]/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "user_create",
+      "route": "/users/new",
+      "page": "src/routes/users/new/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "user_edit",
+      "route": "/users/:id/edit",
+      "page": "src/routes/users/[id]/edit/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "task_list",
+      "route": "/tasks",
+      "page": "src/routes/tasks/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": [
+        {
+          "component": "component_ui_task_summary",
+          "region": "hero",
+          "rendered": true,
+          "marker": "data-topogram-component=\"component_ui_task_summary\""
+        },
+        {
+          "component": "component_ui_task_table",
+          "region": "results",
+          "rendered": true,
+          "marker": "data-topogram-component=\"component_ui_task_table\""
+        }
+      ]
+    },
+    {
+      "id": "task_board",
+      "route": "/tasks/board",
+      "page": "src/routes/tasks/board/+page.svelte",
+      "rendered": true,
+      "renderer": "generator",
+      "component_usages": [
+        {
+          "component": "component_ui_task_board",
+          "region": "results",
+          "rendered": true,
+          "marker": "data-topogram-component=\"component_ui_task_board\""
+        }
+      ]
+    },
+    {
+      "id": "task_calendar",
+      "route": "/tasks/calendar",
+      "page": "src/routes/tasks/calendar/+page.svelte",
+      "rendered": true,
+      "renderer": "generator",
+      "component_usages": [
+        {
+          "component": "component_ui_task_calendar",
+          "region": "results",
+          "rendered": true,
+          "marker": "data-topogram-component=\"component_ui_task_calendar\""
+        }
+      ]
+    },
+    {
+      "id": "task_detail",
+      "route": "/tasks/:id",
+      "page": "src/routes/tasks/[id]/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "task_create",
+      "route": "/tasks/new",
+      "page": "src/routes/tasks/new/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "task_edit",
+      "route": "/tasks/:id/edit",
+      "page": "src/routes/tasks/[id]/edit/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    },
+    {
+      "id": "task_exports",
+      "route": "/task-exports/:job_id",
+      "page": "src/routes/task-exports/[job_id]/+page.svelte",
+      "rendered": true,
+      "renderer": "implementation",
+      "component_usages": []
+    }
+  ],
+  "diagnostics": []
+}
