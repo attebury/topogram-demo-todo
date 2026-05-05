@@ -44,6 +44,9 @@ The main Demo Verification workflow runs Topogram checks, template policy/update
 checks, generated app compile, and the generated runtime command against a
 Postgres service.
 
+See [`CONSUMER_PROOF.md`](./CONSUMER_PROOF.md) for the verification standard
+this repo must keep before it counts as external consumer proof.
+
 Runtime checks intentionally exercise Todo template semantics. CI uses a
 manager/admin bearer-demo identity for manager/admin endpoints such as export
 read/download/delete, while generated web checks still verify user-scoped app
